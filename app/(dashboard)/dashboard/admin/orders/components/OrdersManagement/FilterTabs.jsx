@@ -4,7 +4,7 @@ import { CiFilter } from "react-icons/ci";
 
 export default function FilterTabs({ tabs, activeTab, setActiveTab, searchQuery, setSearchQuery }) {
     return (
-        <div className="px-4 sm:px-6 md:px-8 pt-6 md:pt-8 pb-4">
+        <div className="px-4 sm:px-6 md:px-8 pt-6 md:pt-8 pb-4 overflow-x-auto">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6 md:mb-8">
                 <div className="flex flex-wrap items-center gap-1 bg-gray-50 p-1.5 rounded-2xl w-fit">
                     {tabs.map((tab) => (

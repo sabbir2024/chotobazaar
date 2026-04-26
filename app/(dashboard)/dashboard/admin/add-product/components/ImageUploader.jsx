@@ -73,7 +73,7 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
             if (result.success) {
                 uploadedImages.push({
                     file: file,
-                    preview: URL.createObjectURL(file),
+                    // REMOVED: preview: URL.createObjectURL(file) - No more blob URLs
                     uploadedUrl: result.url,
                     displayUrl: result.display_url,
                     deleteUrl: result.delete_url,
@@ -115,14 +115,11 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
 
         onImagesChange({ type: 'remove', imageId });
 
-        // Revoke object URL to avoid memory leaks
-        if (imageToRemove?.preview) {
-            URL.revokeObjectURL(imageToRemove.preview);
-        }
+        // No blob URLs to revoke anymore
     };
 
-    const setAsPrimary = (imagePreview) => {
-        onSetPrimary(imagePreview);
+    const setAsPrimary = (imageUrl) => {
+        onSetPrimary(imageUrl);
     };
 
     const formatFileSize = (bytes) => {
@@ -176,18 +173,19 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
                     </div>
                 </div>
 
-                {/* Display Images */}
+                {/* Display Images - Using uploadedUrl directly */}
                 {images.map((image) => (
                     <div
                         key={image.id}
-                        className={`aspect-square bg-surface-container-high rounded-xl relative overflow-hidden group cursor-pointer transition-all ${previewImage === image.preview ? 'ring-2 ring-primary ring-offset-2' : ''
+                        className={`aspect-square bg-surface-container-high rounded-xl relative overflow-hidden group cursor-pointer transition-all ${previewImage === image.uploadedUrl ? 'ring-2 ring-primary ring-offset-2' : ''
                             }`}
-                        onClick={() => setAsPrimary(image.preview)}
+                        onClick={() => setAsPrimary(image.uploadedUrl)}
                     >
                         <img
                             className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
-                            src={image.preview}
+                            src={image.uploadedUrl}
                             alt={image.name || 'Product'}
+                            loading="lazy"
                         />
 
                         {/* Overlay on hover */}
@@ -196,7 +194,7 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
                                 type="button"
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    setAsPrimary(image.preview);
+                                    setAsPrimary(image.uploadedUrl);
                                 }}
                                 className="w-6 h-6 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
                                 title="Set as primary"
@@ -217,7 +215,7 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
                         </div>
 
                         {/* Primary Badge */}
-                        {previewImage === image.preview && (
+                        {previewImage === image.uploadedUrl && (
                             <div className="absolute top-2 left-2 bg-primary text-white text-[8px] px-1.5 py-0.5 rounded-full font-bold z-10">
                                 Primary
                             </div>
@@ -227,9 +225,7 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
                         <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white text-[8px] p-1 translate-y-full group-hover:translate-y-0 transition-transform">
                             <div className="truncate">{image.name}</div>
                             <div>{formatFileSize(image.size)}</div>
-                            {image.uploadedUrl && (
-                                <div className="text-[7px] text-green-300">✓ Uploaded to Cloud</div>
-                            )}
+                            <div className="text-[7px] text-green-300">✓ Uploaded to Cloud</div>
                         </div>
                     </div>
                 ))}

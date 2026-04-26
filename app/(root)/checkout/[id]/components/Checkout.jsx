@@ -377,7 +377,7 @@ export default function Checkout({ product }) {
                                     value={formData.name}
                                     onChange={handleInputChange}
                                     placeholder="আপনার নাম লিখুন"
-                                    className="input input-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 />
                             </div>
@@ -395,7 +395,7 @@ export default function Checkout({ product }) {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     placeholder="your@email.com"
-                                    className="input input-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                 />
                             </div>
 
@@ -412,7 +412,7 @@ export default function Checkout({ product }) {
                                     value={formData.phone}
                                     onChange={handleInputChange}
                                     placeholder="01XXXXXXXXX"
-                                    className="input input-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 />
                             </div>
@@ -428,7 +428,7 @@ export default function Checkout({ product }) {
                                     name="division"
                                     value={formData.division}
                                     onChange={handleInputChange}
-                                    className="select select-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 >
                                     <option value="">বিভাগ নির্বাচন করুন</option>
@@ -451,7 +451,7 @@ export default function Checkout({ product }) {
                                     name="district"
                                     value={formData.district}
                                     onChange={handleInputChange}
-                                    className="select select-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                     disabled={!formData.division}
                                 >
@@ -475,7 +475,7 @@ export default function Checkout({ product }) {
                                     name="paymentMethod"
                                     value={formData.paymentMethod}
                                     onChange={handleInputChange}
-                                    className="select select-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 >
                                     <option value="cod">💵 ক্যাশ অন ডেলিভারি</option>
@@ -494,7 +494,7 @@ export default function Checkout({ product }) {
                                     value={formData.address}
                                     onChange={handleInputChange}
                                     placeholder="আপনার বিস্তারিত ঠিকানা"
-                                    className="textarea textarea-bordered rounded-xl focus:border-orange-500 focus:ring-orange-500 transition-all bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="textarea textarea-bordered w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     rows="2"
                                     required
                                 />

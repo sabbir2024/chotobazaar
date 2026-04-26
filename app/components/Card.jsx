@@ -2,18 +2,54 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Card({ product }) {
     const [imgError, setImgError] = useState(false);
-    const [imageSrc, setImageSrc] = useState(() => {
-        const imageUrl = product.product_url || product.primaryImage || product.images?.[0];
-        return imageUrl && imageUrl.trim() !== '' ? imageUrl : null;
-    });
+    const [imageSrc, setImageSrc] = useState(null);
+
+    // Get valid image source (filter out blob URLs and invalid URLs)
+    const getValidImageSource = () => {
+        // Check primaryImage first (if it's not a blob URL)
+        if (product.primaryImage &&
+            typeof product.primaryImage === 'string' &&
+            !product.primaryImage.startsWith('blob:') &&
+            product.primaryImage.trim() !== '') {
+            return product.primaryImage;
+        }
+
+        // Check images array
+        if (product.images && Array.isArray(product.images) && product.images.length > 0) {
+            const validImage = product.images.find(img =>
+                img && typeof img === 'string' &&
+                !img.startsWith('blob:') &&
+                img.trim() !== ''
+            );
+            if (validImage) return validImage;
+        }
+
+        // Check product_url
+        if (product.product_url &&
+            typeof product.product_url === 'string' &&
+            !product.product_url.startsWith('blob:') &&
+            product.product_url.trim() !== '') {
+            return product.product_url;
+        }
+
+        return null;
+    };
+
+    useEffect(() => {
+        // Reset image state when product changes
+        const validImage = getValidImageSource();
+        setImageSrc(validImage);
+        setImgError(false);
+    }, [product._id, product.primaryImage, product.images]);
+
 
     // Calculate discount percentage
     const getDiscountPercentage = () => {
-        const currentPrice = product.price?.current_price || product.basePrice || 0;
+        const currentPrice = product.basePrice || product.price?.current_price || 0;
         const originalPrice = product.comparePrice || product.price?.original_price || 0;
 
         if (originalPrice > currentPrice && originalPrice > 0) {
@@ -25,7 +61,7 @@ export default function Card({ product }) {
 
     // Get current price
     const getCurrentPrice = () => {
-        return product.price?.current_price || product.basePrice || 0;
+        return product.basePrice || product.price?.current_price || 0;
     };
 
     // Get original price (for comparison)
@@ -130,16 +166,17 @@ export default function Card({ product }) {
 
                 {imageSrc && !imgError ? (
                     <Image
-                        height={200}
-                        width={200}
+                        height={300}
+                        width={300}
                         src={imageSrc}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         alt={product.productName || product.product_name || "Product image"}
                         onError={handleImageError}
                         priority={false}
+                        unoptimized={imageSrc?.includes('ibb.co')}
                     />
                 ) : (
-                    // Placeholder when no image is available or image fails to load
+                    // Placeholder when no image is available
                     <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
                         <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />

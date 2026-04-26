@@ -56,7 +56,7 @@ export default function Filters() {
         { label: 'Clothing & Fashion', value: 'Clothing' },
         { label: 'Baby Products', value: 'Baby' },
         { label: 'Fitness', value: 'Fitness' },
-        { label: 'Home & Decor', value: 'Home' },
+        { label: 'Home & Decor', value: 'Decor' },
         { label: 'Tech & Gadgets', value: 'Tech' }
     ];
 
