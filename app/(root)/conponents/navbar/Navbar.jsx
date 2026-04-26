@@ -97,9 +97,9 @@ export default function Navbar() {
                         <Link
                             href="/"
                             onClick={(e) => handleNavigation('/', e)}
-                            className="text-orange-600 text-xl font-bold hover:text-orange-700 dark:text-orange-500 transition-colors"
+                            className="font-bold"
                         >
-                            Fabric Flora
+                            Choto<span className="text-orange-600 text-xl font-bold hover:text-orange-700 dark:text-orange-500 transition-colors">Bazaar</span>
                         </Link>
                     </div>
 
