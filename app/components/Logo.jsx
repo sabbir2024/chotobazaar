@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../public/chotobazaar-logo.jpg";
+import logo from "../../public/flora-mart-logo.jpg";
 
 export default function Logo() {
     return (
