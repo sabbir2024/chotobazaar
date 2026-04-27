@@ -6,12 +6,12 @@ export default function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
                 <div className="lg:col-span-5 space-y-6">
-                    <span className="text-orange-600 text-xs font-bold uppercase">
+                    <span className="text-primary text-xs font-bold uppercase">
                         The Seasonal Edit
                     </span>
 
                     <h1 className="text-4xl md:text-6xl font-black leading-tight">
-                        Curated <br /> Objects for <br /> <span className="text-orange-600">Modern</span> Living.
+                        Curated <br /> Objects for <br /> <span className="text-primary">Modern</span> Living.
                     </h1>
 
                     <p className="text-gray-500 font-bold">
@@ -19,7 +19,7 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <Link href={'/shop'} className="bg-orange-600 font-bold text-white px-6 py-3 rounded-xl">
+                        <Link href={'/shop'} className="bg-primary font-bold text-white px-6 py-3 rounded-xl">
                             Explore
                         </Link>
                         <button className="bg-gray-200 font-bold text-black px-6 py-3 rounded-xl">

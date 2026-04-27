@@ -34,7 +34,6 @@ export default async function ProductGrid({ category, sort }) {
         const data = await response.json();
         products = data.data || data;
     } catch (error) {
-        console.error('Error fetching products:', error);
         products = [];
     }
 

@@ -132,8 +132,8 @@ export default function RichTextEditor({ value, onChange, placeholder = "Describ
             onClick={onClick}
             disabled={disabled}
             className={`p-2 rounded-lg transition-all duration-200 ${isActive
-                    ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400'
-                    : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300'
+                ? 'bg-orange-100 dark:bg-orange-900/30 text-primary dark:text-orange-400'
+                : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300'
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
             title={title}
         >

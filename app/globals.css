@@ -8,21 +8,20 @@
 
 
 
-/* @plugin "daisyui" {
-  themes: {
-    --color-primary: #9c3e00;
-    --color-secondary: #964300;
-    --color-accent: #ff7a31;
-    --color-neutral: #2d2f2f;
-    --color-base-100: #f6f6f6;
-    --color-base-200: #e7e8e8;
-    --color-base-300: #dbdddd;
-    --color-info: #3b82f6;
-    --color-success: #10b981;
-    --color-warning: #f59e0b;
-    --color-error: #b02500;
-  }
-} */
+@plugin "daisyui/theme" {
+  default: true;
+  --color-primary: #dd6b20;
+  --color-secondary: #964300;
+  --color-accent: #ff7a31;
+  --color-neutral: #2d2f2f;
+  --color-base-100: #f6f6f6;
+  --color-base-200: #e7e8e8;
+  --color-base-300: #dbdddd;
+  --color-info: #3b82f6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #b02500;
+}
 
 
 @theme {
@@ -198,4 +197,26 @@
 
 .animate-glitch-2 {
   animation: glitch-2 0.5s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }

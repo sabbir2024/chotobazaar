@@ -45,7 +45,7 @@ export default function AdminDashboard() {
     const getStatusColor = (statusColor) => {
         const colors = {
             emerald: 'bg-emerald-50 text-emerald-600 border-emerald-100',
-            orange: 'bg-orange-50 text-orange-600 border-orange-100',
+            orange: 'bg-orange-50 text-primary border-orange-100',
         };
         return colors[statusColor] || 'bg-gray-50 text-gray-600 border-gray-100';
     };
@@ -55,7 +55,7 @@ export default function AdminDashboard() {
             {/* Header & Top Bar */}
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <span className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-2 block">
+                    <span className="text-primary  font-bold text-xs uppercase tracking-[0.2em] mb-2 block">
                         Executive Overview
                     </span>
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-on-surface">

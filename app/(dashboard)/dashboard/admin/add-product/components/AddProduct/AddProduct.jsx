@@ -208,7 +208,7 @@ export default function AddProduct() {
                             <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 font-bold">
                                 <span>Products</span>
                                 <span className="material-symbols-outlined text-[10px]">chevron_right</span>
-                                <span className="text-orange-600 dark:text-orange-500">Add New</span>
+                                <span className="text-primary dark:text-orange-500">Add New</span>
                             </nav>
                             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">Catalog Item</h2>
                             <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm">Create a new unique product entry for your global storefront.</p>
@@ -225,7 +225,7 @@ export default function AddProduct() {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="px-6 md:px-8 py-2.5 md:py-3 rounded-xl bg-linear-to-br from-orange-600 to-orange-700 dark:from-orange-500 dark:to-orange-600 text-white text-xs md:text-sm font-bold shadow-lg active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                className="px-6 md:px-8 py-2.5 md:py-3 rounded-xl bg-linear-to-br from-primary to-orange-700 dark:from-orange-500 dark:to-primary text-white text-xs md:text-sm font-bold shadow-lg active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                             >
                                 {isLoading ? (<>Saving...</>) : ('Save Product')}
                             </button>
@@ -244,7 +244,7 @@ export default function AddProduct() {
                             {/* General Information */}
                             <section className="bg-white dark:bg-gray-900 p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
                                 <h3 className="text-base md:text-lg font-bold mb-4 md:mb-6 text-gray-900 dark:text-white flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-orange-600 dark:text-orange-500">info</span>
+                                    <span className="material-symbols-outlined text-primary dark:text-orange-500">info</span>
                                     General Information
                                 </h3>
                                 <div className="space-y-4 md:space-y-6">
@@ -341,7 +341,7 @@ export default function AddProduct() {
                             <section className="bg-white dark:bg-gray-900 p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
                                 <div className="flex items-center justify-between mb-4 md:mb-6">
                                     <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-orange-600 dark:text-orange-500">image</span>
+                                        <span className="material-symbols-outlined text-primary dark:text-orange-500">image</span>
                                         Media Assets
                                     </h3>
                                     <span className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-widest">Max 10 files, 10MB each</span>
@@ -380,7 +380,7 @@ export default function AddProduct() {
                                 <div className="bg-linear-to-r from-orange-50 to-orange-100/30 dark:from-orange-950/30 dark:to-orange-900/20 p-3 md:p-4 border-b border-gray-100 dark:border-gray-800">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-600 dark:text-orange-500">Live Preview</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-orange-500">Live Preview</span>
                                             <p className="text-[9px] text-gray-500 dark:text-gray-400 mt-0.5">Product Listing Page View</p>
                                         </div>
                                         <div className="flex gap-1">
@@ -404,7 +404,7 @@ export default function AddProduct() {
                                                 <h3 className="font-bold text-sm line-clamp-2 flex-1 text-gray-900 dark:text-white">
                                                     {formData.productName || "Product Name"}
                                                 </h3>
-                                                <p className="text-orange-600 dark:text-orange-500 font-bold text-sm whitespace-nowrap">
+                                                <p className="text-primary dark:text-orange-500 font-bold text-sm whitespace-nowrap">
                                                     ${formData.basePrice || "0.00"}
                                                 </p>
                                             </div>
@@ -435,7 +435,7 @@ export default function AddProduct() {
                                 <div className="bg-linear-to-r from-orange-50 to-orange-100/30 dark:from-orange-950/30 dark:to-orange-900/20 p-3 md:p-4 border-b border-gray-100 dark:border-gray-800">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-600 dark:text-orange-500">Live Preview</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-orange-500">Live Preview</span>
                                             <p className="text-[9px] text-gray-500 dark:text-gray-400 mt-0.5">Product Details Page View</p>
                                         </div>
                                         <div className="flex gap-1">
@@ -468,7 +468,7 @@ export default function AddProduct() {
                                                 <span className="text-[10px] text-gray-400 dark:text-gray-500">(12 reviews)</span>
                                             </div>
                                             <div className="flex items-center gap-2 mt-2">
-                                                <span className="text-lg md:text-xl font-bold text-orange-600 dark:text-orange-500">
+                                                <span className="text-lg md:text-xl font-bold text-primary dark:text-orange-500">
                                                     ${formData.basePrice || "0.00"}
                                                 </span>
                                                 {formData.comparePrice && (
@@ -497,7 +497,7 @@ export default function AddProduct() {
                                                     }}
                                                 />
                                             </div>
-                                            <button className="w-full mt-3 py-2 rounded-lg bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold hover:bg-orange-700 dark:hover:bg-orange-600 transition-colors">
+                                            <button className="w-full mt-3 py-2 rounded-lg bg-primary dark:bg-orange-500 text-white text-xs font-bold hover:bg-orange-700 dark:hover:bg-primary transition-colors">
                                                 Add to Cart
                                             </button>
                                         </div>
@@ -510,7 +510,7 @@ export default function AddProduct() {
                                 <div className="bg-linear-to-r from-orange-50 to-orange-100/30 dark:from-orange-950/30 dark:to-orange-900/20 p-3 md:p-4 border-b border-gray-100 dark:border-gray-800">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-600 dark:text-orange-500">Live Preview</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-orange-500">Live Preview</span>
                                             <p className="text-[9px] text-gray-500 dark:text-gray-400 mt-0.5">Cart / Quick View</p>
                                         </div>
                                         <div className="flex gap-1">
@@ -534,7 +534,7 @@ export default function AddProduct() {
                                                 {formData.productName || "Product Name"}
                                             </h4>
                                             <div className="flex items-center justify-between mt-1">
-                                                <span className="text-orange-600 dark:text-orange-500 font-bold text-sm">
+                                                <span className="text-primary dark:text-orange-500 font-bold text-sm">
                                                     ${formData.basePrice || "0.00"}
                                                 </span>
                                                 <div className="flex items-center gap-2">

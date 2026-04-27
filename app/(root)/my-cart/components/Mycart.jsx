@@ -76,7 +76,7 @@ export default function Mycard({ bookings }) {
             80: { name: 'ঢাকা মেট্রো', icon: '🚇', color: 'text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-950/30' },
             100: { name: 'সিটি কর্পোরেশন', icon: '🏛️', color: 'text-purple-600 bg-purple-50 dark:text-purple-400 dark:bg-purple-950/30' },
             120: { name: 'নিকটবর্তী জেলা', icon: '🚌', color: 'text-amber-600 bg-amber-50 dark:text-amber-400 dark:bg-amber-950/30' },
-            150: { name: 'সাধারণ জেলা', icon: '🚚', color: 'text-orange-600 bg-orange-50 dark:text-orange-400 dark:bg-orange-950/30' }
+            150: { name: 'সাধারণ জেলা', icon: '🚚', color: 'text-primary bg-orange-50 dark:text-orange-400 dark:bg-orange-950/30' }
         };
         const zone = zones[charge] || { name: 'অন্যান্য', icon: '📍', color: 'text-gray-600 bg-gray-50 dark:text-gray-400 dark:bg-gray-800' };
         return (
@@ -125,7 +125,7 @@ export default function Mycard({ bookings }) {
                 <div class="text-left text-sm max-h-96 overflow-y-auto">
                     <div class="bg-orange-50 dark:bg-orange-950/30 p-3 rounded-lg mb-3">
                         <div class="grid grid-cols-2 gap-2">
-                            <span class="font-semibold text-orange-600 dark:text-orange-400">অর্ডার আইডি:</span>
+                            <span class="font-semibold text-primary dark:text-orange-400">অর্ডার আইডি:</span>
                             <span class="font-mono text-xs dark:text-gray-300">${booking._id.slice(-8)}</span>
                         </div>
                     </div>
@@ -146,7 +146,7 @@ export default function Mycard({ bookings }) {
                         <span class="text-xs dark:text-gray-300">${formatAddress(booking)}</span>
                     </div>
                     <div class="bg-gray-50 dark:bg-gray-800 p-2 rounded-lg my-2">
-                        <div class="font-semibold text-orange-600 dark:text-orange-400 mb-1">📦 পণ্যের বিবরণ</div>
+                        <div class="font-semibold text-primary dark:text-orange-400 mb-1">📦 পণ্যের বিবরণ</div>
                         <div class="text-xs dark:text-gray-300">${booking.productName}</div>
                         <div class="flex justify-between mt-1 dark:text-gray-300">
                             <span>পরিমাণ: ${booking.quantity}</span>
@@ -163,7 +163,7 @@ export default function Mycard({ bookings }) {
                             <span>৳${booking.delivery_charge}</span>
                         </div>
                         <div class="border-t border-orange-200 dark:border-orange-800 my-2"></div>
-                        <div class="flex justify-between font-bold text-orange-600 dark:text-orange-400">
+                        <div class="flex justify-between font-bold text-primary dark:text-orange-400">
                             <span>মোট মূল্য:</span>
                             <span>৳${booking.total_price}</span>
                         </div>
@@ -185,7 +185,7 @@ export default function Mycard({ bookings }) {
             color: document.documentElement.classList.contains('dark') ? '#f3f4f6' : '#374151',
             customClass: {
                 popup: 'rounded-2xl',
-                confirmButton: 'bg-orange-600 hover:bg-orange-700 rounded-full px-6'
+                confirmButton: 'bg-primary hover:bg-orange-700 rounded-full px-6'
             }
         });
     };
@@ -204,7 +204,7 @@ export default function Mycard({ bookings }) {
             color: document.documentElement.classList.contains('dark') ? '#f3f4f6' : '#374151',
             customClass: {
                 popup: 'rounded-2xl',
-                confirmButton: 'bg-orange-600 hover:bg-orange-700 rounded-full px-6',
+                confirmButton: 'bg-primary hover:bg-orange-700 rounded-full px-6',
                 cancelButton: 'rounded-full px-6'
             }
         }).then(async (result) => {
@@ -228,7 +228,7 @@ export default function Mycard({ bookings }) {
                             confirmButtonColor: '#ea580c',
                             background: document.documentElement.classList.contains('dark') ? '#1f2937' : '#ffffff',
                             color: document.documentElement.classList.contains('dark') ? '#f3f4f6' : '#374151',
-                            customClass: { popup: 'rounded-2xl', confirmButton: 'bg-orange-600 rounded-full px-6' }
+                            customClass: { popup: 'rounded-2xl', confirmButton: 'bg-primary rounded-full px-6' }
                         });
                         router.refresh();
                     }
@@ -251,13 +251,13 @@ export default function Mycard({ bookings }) {
         return (
             <div className="min-h-[60vh] flex items-center justify-center p-4">
                 <div className="text-center bg-linear-to-br from-white to-orange-50/30 dark:from-zinc-800 dark:to-orange-950/20 p-6 md:p-10 rounded-2xl shadow-xl w-full max-w-md border border-orange-100 dark:border-orange-900/50">
-                    <div className="w-20 h-20 mx-auto bg-linear-to-r from-orange-600 to-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
+                    <div className="w-20 h-20 mx-auto bg-linear-to-r from-primary to-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
                         <IoCartOutline className="text-4xl text-white" />
                     </div>
                     <h2 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-2">কোন অর্ডার পাওয়া যায়নি</h2>
                     <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 mb-6">আপনার এখনও কোন অর্ডার নেই</p>
                     <button
-                        className="px-6 py-3 bg-linear-to-r from-orange-600 to-orange-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
+                        className="px-6 py-3 bg-linear-to-r from-primary to-orange-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
                         onClick={() => router.push('/')}
                     >
                         শপিং শুরু করুন
@@ -270,7 +270,7 @@ export default function Mycard({ bookings }) {
     return (
         <div className="space-y-4 p-2 md:p-0">
             {/* Header & Controls */}
-            <div className="bg-linear-to-r from-orange-600 to-orange-500 rounded-2xl p-4 md:p-6 text-white shadow-xl">
+            <div className="bg-linear-to-r from-primary to-orange-500 rounded-2xl p-4 md:p-6 text-white shadow-xl">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2">
@@ -296,14 +296,14 @@ export default function Mycard({ bookings }) {
                         <div className="hidden md:flex join bg-white/20 rounded-xl">
                             <button
                                 type="button"
-                                className={`join-item btn btn-sm ${viewMode === 'card' ? 'bg-white text-orange-600' : 'bg-transparent text-white'}`}
+                                className={`join-item btn btn-sm ${viewMode === 'card' ? 'bg-white text-primary' : 'bg-transparent text-white'}`}
                                 onClick={() => setViewMode('card')}
                             >
                                 <IoGridOutline />
                             </button>
                             <button
                                 type="button"
-                                className={`join-item btn btn-sm ${viewMode === 'table' ? 'bg-white text-orange-600' : 'bg-transparent text-white'}`}
+                                className={`join-item btn btn-sm ${viewMode === 'table' ? 'bg-white text-primary' : 'bg-transparent text-white'}`}
                                 onClick={() => setViewMode('table')}
                             >
                                 <IoListOutline />
@@ -331,11 +331,11 @@ export default function Mycard({ bookings }) {
                                     <div className="flex items-center gap-2">
                                         <input
                                             type="checkbox"
-                                            className="checkbox checkbox-sm rounded border-orange-300 checked:bg-orange-600"
+                                            className="checkbox checkbox-sm rounded border-orange-300 checked:bg-primary"
                                             checked={selectedBookings.includes(booking._id)}
                                             onChange={() => toggleSelect(booking._id)}
                                         />
-                                        <span className="font-bold text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/50 px-2 py-1 rounded-lg text-sm">
+                                        <span className="font-bold text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/50 px-2 py-1 rounded-lg text-sm">
                                             #{index + 1}
                                         </span>
                                     </div>
@@ -355,7 +355,7 @@ export default function Mycard({ bookings }) {
                                 <div className="bg-orange-50 dark:bg-orange-950/30 rounded-xl p-3 mb-3">
                                     <p className="font-medium text-gray-800 dark:text-white text-sm">{booking.productName}</p>
                                     <div className="flex justify-between items-center mt-2 text-sm">
-                                        <span className="dark:text-gray-300">পরিমাণ: <span className="font-bold text-orange-600 dark:text-orange-500">{booking.quantity}</span></span>
+                                        <span className="dark:text-gray-300">পরিমাণ: <span className="font-bold text-primary dark:text-orange-500">{booking.quantity}</span></span>
                                         <span className="dark:text-gray-300">প্রতি পিস: ৳{booking?.basePrice}</span>
                                     </div>
                                 </div>
@@ -368,7 +368,7 @@ export default function Mycard({ bookings }) {
                                     </div>
                                     <div className="text-right">
                                         <div className="text-sm text-gray-500 dark:text-gray-400">মোট মূল্য</div>
-                                        <div className="text-xl font-bold text-orange-600 dark:text-orange-500">৳{booking.total_price}</div>
+                                        <div className="text-xl font-bold text-primary dark:text-orange-500">৳{booking.total_price}</div>
                                     </div>
                                 </div>
 
@@ -386,7 +386,7 @@ export default function Mycard({ bookings }) {
                                     </div>
                                     <div className="flex gap-2">
                                         <button
-                                            className="px-3 py-1.5 text-xs font-medium text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-950/50 transition-colors flex items-center gap-1"
+                                            className="px-3 py-1.5 text-xs font-medium text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-950/50 transition-colors flex items-center gap-1"
                                             onClick={() => showOrderDetails(booking)}
                                         >
                                             <IoEyeOutline /> বিস্তারিত
@@ -421,11 +421,11 @@ export default function Mycard({ bookings }) {
                                         <div className="flex items-center gap-2">
                                             <input
                                                 type="checkbox"
-                                                className="checkbox checkbox-sm rounded border-orange-300 checked:bg-orange-600"
+                                                className="checkbox checkbox-sm rounded border-orange-300 checked:bg-primary"
                                                 checked={selectedBookings.includes(booking._id)}
                                                 onChange={() => toggleSelect(booking._id)}
                                             />
-                                            <span className="font-bold text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/50 px-2 py-1 rounded-lg text-sm">
+                                            <span className="font-bold text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/50 px-2 py-1 rounded-lg text-sm">
                                                 #{index + 1}
                                             </span>
                                         </div>
@@ -445,7 +445,7 @@ export default function Mycard({ bookings }) {
                                     <div className="bg-orange-50 dark:bg-orange-950/30 rounded-xl p-3 mb-3">
                                         <p className="font-medium text-gray-800 dark:text-white text-sm">{booking.productName}</p>
                                         <div className="flex justify-between items-center mt-2 text-sm">
-                                            <span className="dark:text-gray-300">পরিমাণ: <span className="font-bold text-orange-600 dark:text-orange-500">{booking.quantity}</span></span>
+                                            <span className="dark:text-gray-300">পরিমাণ: <span className="font-bold text-primary dark:text-orange-500">{booking.quantity}</span></span>
                                             <span className="dark:text-gray-300">প্রতি পিস: ৳{booking.basePrice}</span>
                                         </div>
                                     </div>
@@ -458,7 +458,7 @@ export default function Mycard({ bookings }) {
                                         </div>
                                         <div className="text-right">
                                             <div className="text-sm text-gray-500 dark:text-gray-400">মোট মূল্য</div>
-                                            <div className="text-xl font-bold text-orange-600 dark:text-orange-500">৳{booking.total_price}</div>
+                                            <div className="text-xl font-bold text-primary dark:text-orange-500">৳{booking.total_price}</div>
                                         </div>
                                     </div>
 
@@ -476,7 +476,7 @@ export default function Mycard({ bookings }) {
                                         </div>
                                         <div className="flex gap-2">
                                             <button
-                                                className="px-3 py-1.5 text-xs font-medium text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-950/50 transition-colors flex items-center gap-1"
+                                                className="px-3 py-1.5 text-xs font-medium text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-950/50 transition-colors flex items-center gap-1"
                                                 onClick={() => showOrderDetails(booking)}
                                             >
                                                 <IoEyeOutline /> বিস্তারিত
@@ -505,7 +505,7 @@ export default function Mycard({ bookings }) {
                                 <th className="w-8">
                                     <input
                                         type="checkbox"
-                                        className="checkbox checkbox-sm rounded border-orange-300 checked:bg-orange-600"
+                                        className="checkbox checkbox-sm rounded border-orange-300 checked:bg-primary"
                                         checked={selectedBookings.length === bookings.length}
                                         onChange={toggleSelectAll}
                                     />
@@ -527,12 +527,12 @@ export default function Mycard({ bookings }) {
                                     <td>
                                         <input
                                             type="checkbox"
-                                            className="checkbox checkbox-sm rounded border-orange-300 checked:bg-orange-600"
+                                            className="checkbox checkbox-sm rounded border-orange-300 checked:bg-primary"
                                             checked={selectedBookings.includes(booking._id)}
                                             onChange={() => toggleSelect(booking._id)}
                                         />
                                     </td>
-                                    <td className="font-bold text-orange-600 dark:text-orange-500">#{index + 1}</td>
+                                    <td className="font-bold text-primary dark:text-orange-500">#{index + 1}</td>
                                     <td>
                                         <div className="font-semibold text-gray-800 dark:text-white">{booking.customer_name}</div>
                                         <div className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1"><IoCallOutline /> {booking.customer_phone}</div>
@@ -540,15 +540,15 @@ export default function Mycard({ bookings }) {
                                     </td>
                                     <td>
                                         <div className="font-medium text-gray-800 dark:text-white">{booking.productName}</div>
-                                        <div className="text-xs text-orange-600 dark:text-orange-500">{booking.product_price}</div>
+                                        <div className="text-xs text-primary dark:text-orange-500">{booking.product_price}</div>
                                     </td>
                                     <td>
-                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-orange-100 dark:bg-orange-950/50 text-orange-600 dark:text-orange-500 rounded-full font-bold text-sm">
+                                        <span className="inline-flex items-center justify-center w-8 h-8 bg-orange-100 dark:bg-orange-950/50 text-primary dark:text-orange-500 rounded-full font-bold text-sm">
                                             {booking.quantity}
                                         </span>
                                     </td>
                                     <td>
-                                        <div className="font-bold text-orange-600 dark:text-orange-500">৳{booking.total_price}</div>
+                                        <div className="font-bold text-primary dark:text-orange-500">৳{booking.total_price}</div>
                                         <div className="text-xs text-gray-400 dark:text-gray-500 hidden md:block">ডেলিভারি: ৳{booking.delivery_charge}</div>
                                     </td>
                                     <td className="hidden lg:table-cell">
@@ -566,7 +566,7 @@ export default function Mycard({ bookings }) {
                                     <td>
                                         <div className="flex gap-1">
                                             <button
-                                                className="p-2 text-orange-600 dark:text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 rounded-lg transition-colors"
+                                                className="p-2 text-primary dark:text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 rounded-lg transition-colors"
                                                 title="বিস্তারিত"
                                                 onClick={() => showOrderDetails(booking)}
                                             >
@@ -595,7 +595,7 @@ export default function Mycard({ bookings }) {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div>
                         <p className="text-sm text-gray-600 dark:text-gray-400">সর্বমোট অর্ডার মূল্য</p>
-                        <p className="text-2xl font-bold text-orange-600 dark:text-orange-500">
+                        <p className="text-2xl font-bold text-primary dark:text-orange-500">
                             ৳{bookings.reduce((sum, b) => sum + b.total_price, 0)}
                         </p>
                     </div>

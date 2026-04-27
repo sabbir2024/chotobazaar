@@ -129,7 +129,7 @@ export default function SignupSection({ onSuccess }) {
             </div>
 
             <div className="bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-bold p-6 md:p-10 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-bold mb-6 text-orange-600 dark:text-orange-500">Create New Account</h3>
+                <h3 className="text-xl font-bold mb-6 text-primary dark:text-orange-500">Create New Account</h3>
 
                 {error && (
                     <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg text-sm">
@@ -177,7 +177,7 @@ export default function SignupSection({ onSuccess }) {
                     <button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full bg-primary hover:bg-orange-700 text-white py-3 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {isLoading ? (
                             <span className="loading loading-spinner loading-sm"></span>
@@ -190,7 +190,7 @@ export default function SignupSection({ onSuccess }) {
                 <div className="mt-4 text-center">
                     <button
                         onClick={() => document.getElementById('login-tab')?.click()}
-                        className="text-sm text-orange-600 dark:text-orange-500 hover:underline"
+                        className="text-sm text-primary dark:text-orange-500 hover:underline"
                     >
                         Already have an account? Sign in
                     </button>

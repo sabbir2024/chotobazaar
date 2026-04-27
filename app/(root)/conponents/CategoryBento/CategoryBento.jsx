@@ -12,7 +12,7 @@ export default function BentoSection() {
                     <p>Best product right now</p>
                 </div>
 
-                <div className="bg-orange-600 text-white rounded-xl p-6">
+                <div className="bg-primary text-white rounded-xl p-6">
                     <h3 className="text-xl font-bold">Deals</h3>
                 </div>
 

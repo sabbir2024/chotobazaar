@@ -18,7 +18,7 @@ export default function BrandStory() {
 
                 <div className="grid md:grid-cols-3 gap-6 mt-16">
 
-                    <div className="bg-white p-6 rounded-xl border-b-4 border-orange-600">
+                    <div className="bg-white p-6 rounded-xl border-b-4 border-primary">
                         <h3 className="font-bold mb-2">Artisan Led</h3>
                         <p className="text-sm text-gray-500">
                             High quality handcrafted products.

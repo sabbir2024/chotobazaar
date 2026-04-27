@@ -5,7 +5,7 @@ export default function PricingSection({ basePrice, comparePrice, onBasePriceCha
     return (
         <section className="bg-white dark:bg-gray-800 p-5 md:p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 transition-colors duration-200">
             <h3 className="text-base md:text-lg font-bold mb-4 md:mb-6 text-gray-900 dark:text-white flex items-center gap-2">
-                <span className="material-symbols-outlined text-orange-600 dark:text-orange-400">payments</span>
+                <span className="material-symbols-outlined text-primary dark:text-orange-400">payments</span>
                 Pricing
             </h3>
             <div className="space-y-4 md:space-y-6">

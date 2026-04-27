@@ -71,7 +71,7 @@ export default function Filters() {
                             key={category.value}
                             type="radio"
                             name="category"
-                            className="tab rounded-lg transition-all font-bold text-black checked:bg-orange-600 checked:text-white cursor-pointer whitespace-nowrap"
+                            className="tab rounded-lg transition-all font-bold text-black checked:bg-primary checked:text-white cursor-pointer whitespace-nowrap"
                             aria-label={category.label}
                             checked={selectedCategory === category.value}
                             onChange={() => handleCategoryChange(category.value)}
@@ -81,7 +81,7 @@ export default function Filters() {
 
                 {/* সর্ট অপশন */}
                 <select
-                    className="bg-transparent font-bold text-orange-600 border-none focus:outline-none cursor-pointer"
+                    className="bg-transparent font-bold text-primary border-none focus:outline-none cursor-pointer"
                     value={selectedSort}
                     onChange={handleSortChange}
                 >

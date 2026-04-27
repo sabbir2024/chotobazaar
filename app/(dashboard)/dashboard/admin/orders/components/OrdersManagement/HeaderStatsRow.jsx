@@ -35,7 +35,7 @@ export default function HeaderStatsRow({ orders }) {
 
                 <div className="px-4 sm:px-6 py-3 bg-white rounded-2xl shadow-sm border border-gray-100">
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Pending</p>
-                    <p className="text-xl sm:text-2xl font-bold text-orange-600">{pendingOrders}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-primary">{pendingOrders}</p>
                 </div>
 
                 <div className="px-4 sm:px-6 py-3 bg-white rounded-2xl shadow-sm border border-gray-100">

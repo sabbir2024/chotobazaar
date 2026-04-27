@@ -21,7 +21,7 @@ export default function AboutHero() {
             </div>
 
             <div className="lg:col-span-5 flex flex-col gap-6">
-                <span className="text-orange-600 text-xs font-bold uppercase">
+                <span className="text-primary text-xs font-bold uppercase">
                     Our Philosophy
                 </span>
 
@@ -35,7 +35,7 @@ export default function AboutHero() {
 
                 <a
                     href="#login"
-                    className="bg-orange-600 text-white px-6 py-3 rounded-xl w-fit"
+                    className="bg-primary text-white px-6 py-3 rounded-xl w-fit"
                 >
                     Join the Collective
                 </a>

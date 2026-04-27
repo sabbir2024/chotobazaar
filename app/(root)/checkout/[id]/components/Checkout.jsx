@@ -99,7 +99,7 @@ export default function Checkout({ product }) {
                 confirmButtonText: "ঠিক আছে",
                 customClass: {
                     popup: 'rounded-2xl',
-                    confirmButton: 'bg-orange-600 hover:bg-orange-700'
+                    confirmButton: 'bg-primary hover:bg-orange-700'
                 }
             });
             setIsSubmitting(false);
@@ -151,8 +151,8 @@ export default function Checkout({ product }) {
                     html: `
                         <div class="text-left space-y-2">
                             <div class="bg-orange-50 dark:bg-orange-900/30 p-3 rounded-lg">
-                                <p class="text-sm text-gray-700 dark:text-gray-300">অর্ডার আইডি: <strong class="text-orange-600 dark:text-orange-400">${result?.order_id || 'N/A'}</strong></p>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">মোট মূল্য: <strong class="text-orange-600 dark:text-orange-400">৳${totalPrice}</strong></p>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">অর্ডার আইডি: <strong class="text-primary dark:text-orange-400">${result?.order_id || 'N/A'}</strong></p>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">মোট মূল্য: <strong class="text-primary dark:text-orange-400">৳${totalPrice}</strong></p>
                                 <p class="text-sm text-gray-700 dark:text-gray-300">পেমেন্ট মেথড: <strong>${formData.paymentMethod === 'cod' ? 'ক্যাশ অন ডেলিভারি' : formData.paymentMethod}</strong></p>
                             </div>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। ডেলিভারির জন্য ধন্যবাদ!</p>
@@ -166,7 +166,7 @@ export default function Checkout({ product }) {
                     customClass: {
                         popup: 'rounded-2xl',
                         title: 'text-xl font-bold',
-                        confirmButton: 'bg-orange-600 hover:bg-orange-700 px-6 py-2 rounded-full'
+                        confirmButton: 'bg-primary hover:bg-orange-700 px-6 py-2 rounded-full'
                     }
                 });
 
@@ -343,7 +343,7 @@ export default function Checkout({ product }) {
         <div className="w-full mx-auto p-4 sm:p-6 bg-linear-to-br from-white to-orange-50/30 dark:from-zinc-900 dark:to-orange-950/20 rounded-2xl shadow-2xl border border-orange-100 dark:border-orange-900/50">
             {/* Header */}
             <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-linear-to-r from-orange-600 to-orange-500 text-white mb-3 shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-linear-to-r from-primary to-orange-500 text-white mb-3 shadow-lg">
                     <IoCartOutline className="text-3xl" />
                 </div>
                 <h3 className="font-bold text-2xl sm:text-3xl text-gray-800 dark:text-white">
@@ -357,7 +357,7 @@ export default function Checkout({ product }) {
                     {/* Customer Info Section */}
                     <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm p-5 rounded-2xl border border-orange-100 dark:border-orange-900/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-200 dark:border-orange-800">
-                            <div className="w-8 h-8 rounded-full bg-linear-to-r from-orange-600 to-orange-500 flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-linear-to-r from-primary to-orange-500 flex items-center justify-center">
                                 <IoPersonOutline className="text-white text-sm" />
                             </div>
                             <h4 className="font-semibold text-lg text-gray-800 dark:text-white">প্রাপকের তথ্য</h4>
@@ -507,7 +507,7 @@ export default function Checkout({ product }) {
                         {/* Product Info */}
                         <div className="bg-linear-to-r from-orange-50 to-white dark:from-orange-950/20 dark:to-zinc-800 p-5 rounded-2xl border border-orange-100 dark:border-orange-900/50 shadow-lg">
                             <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-200 dark:border-orange-800">
-                                <div className="w-8 h-8 rounded-full bg-linear-to-r from-orange-600 to-orange-500 flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-full bg-linear-to-r from-primary to-orange-500 flex items-center justify-center">
                                     <IoCubeOutline className="text-white text-sm" />
                                 </div>
                                 <h4 className="font-semibold text-lg text-gray-800 dark:text-white">প্রোডাক্টের বিবরণ</h4>
@@ -525,7 +525,7 @@ export default function Checkout({ product }) {
                                     <div>
                                         <label className="label-text font-medium text-gray-600 dark:text-gray-400">প্রতি পিস মূল্য</label>
                                         <div className="bg-orange-100/50 dark:bg-orange-900/20 p-3 rounded-xl mt-1 border border-orange-200 dark:border-orange-800">
-                                            <p className="font-bold text-orange-600 dark:text-orange-500 text-lg">৳{formData.productPrice}</p>
+                                            <p className="font-bold text-primary dark:text-orange-500 text-lg">৳{formData.productPrice}</p>
                                         </div>
                                     </div>
 
@@ -535,7 +535,7 @@ export default function Checkout({ product }) {
                                             <button
                                                 type="button"
                                                 onClick={decrementQuantity}
-                                                className="w-8 h-8 rounded-full bg-orange-600 text-white hover:bg-orange-700 transition-all flex items-center justify-center font-bold"
+                                                className="w-8 h-8 rounded-full bg-primary text-white hover:bg-orange-700 transition-all flex items-center justify-center font-bold"
                                             >
                                                 -
                                             </button>
@@ -550,7 +550,7 @@ export default function Checkout({ product }) {
                                             <button
                                                 type="button"
                                                 onClick={incrementQuantity}
-                                                className="w-8 h-8 rounded-full bg-orange-600 text-white hover:bg-orange-700 transition-all flex items-center justify-center font-bold"
+                                                className="w-8 h-8 rounded-full bg-primary text-white hover:bg-orange-700 transition-all flex items-center justify-center font-bold"
                                             >
                                                 +
                                             </button>
@@ -561,7 +561,7 @@ export default function Checkout({ product }) {
                         </div>
 
                         {/* Price Calculation */}
-                        <div className="bg-linear-to-r from-orange-600 to-orange-500 dark:from-orange-700 dark:to-orange-600 p-5 rounded-2xl shadow-xl">
+                        <div className="bg-linear-to-r from-primary to-orange-500 dark:from-orange-700 dark:to-primary p-5 rounded-2xl shadow-xl">
                             <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-300 dark:border-orange-500">
                                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                                     <IoPricetagOutline className="text-white text-sm" />
@@ -603,7 +603,7 @@ export default function Checkout({ product }) {
                             flex items-center justify-center gap-2
                             ${isSubmitting
                                 ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
-                                : 'bg-linear-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 hover:shadow-2xl hover:scale-[1.02] active:scale-98'
+                                : 'bg-linear-to-r from-primary to-orange-500 dark:from-orange-500 dark:to-primary hover:shadow-2xl hover:scale-[1.02] active:scale-98'
                             }
                         `}
                     >

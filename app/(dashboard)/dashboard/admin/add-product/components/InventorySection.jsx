@@ -35,7 +35,7 @@ export default function InventorySection({ sku, quantity, weight, onSkuChange, o
                         <button
                             type="button"
                             onClick={onQuantityDecrement}
-                            className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-surface-container-high dark:bg-gray-700 flex items-center justify-center hover:bg-primary dark:hover:bg-orange-600 hover:text-white transition-all dark:text-gray-200"
+                            className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-surface-container-high dark:bg-gray-700 flex items-center justify-center hover:bg-primary dark:hover:bg-primary hover:text-white transition-all dark:text-gray-200"
                         >
                             <span className="material-symbols-outlined text-base md:text-lg"><FaCircleMinus /></span>
                         </button>
@@ -49,7 +49,7 @@ export default function InventorySection({ sku, quantity, weight, onSkuChange, o
                         <button
                             type="button"
                             onClick={onQuantityIncrement}
-                            className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-surface-container-high dark:bg-gray-700 flex items-center justify-center hover:bg-primary dark:hover:bg-orange-600 hover:text-white transition-all dark:text-gray-200"
+                            className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-surface-container-high dark:bg-gray-700 flex items-center justify-center hover:bg-primary dark:hover:bg-primary hover:text-white transition-all dark:text-gray-200"
                         >
                             <span className="material-symbols-outlined text-base md:text-lg"><FaSquarePlus /></span>
                         </button>

@@ -8,7 +8,7 @@ export default function Footer() {
 
                 {/* Brand */}
                 <div className="md:col-span-1">
-                    <div className="text-xl font-black text-orange-600 dark:text-orange-600 mb-4">
+                    <div className="text-xl font-black text-primary dark:text-primary mb-4">
                         <Logo />
                     </div>
                     <p className="text-zinc-400 text-xs leading-relaxed max-w-xs">
@@ -19,7 +19,7 @@ export default function Footer() {
 
                 {/* Discover */}
                 <div className="flex flex-col gap-4">
-                    <span className="text-xs uppercase tracking-widest text-orange-600 font-bold">
+                    <span className="text-xs uppercase tracking-widest text-primary font-bold">
                         Discover
                     </span>
                     <a className="text-zinc-400 dark:text-zinc-500 hover:text-orange-500 transition-colors text-xs uppercase tracking-widest">
@@ -35,7 +35,7 @@ export default function Footer() {
 
                 {/* Connect */}
                 <div className="flex flex-col gap-4">
-                    <span className="text-xs uppercase tracking-widest text-orange-600 font-bold">
+                    <span className="text-xs uppercase tracking-widest text-primary font-bold">
                         Connect
                     </span>
                     <a className="text-zinc-400 dark:text-zinc-500 hover:text-orange-500 transition-colors text-xs uppercase tracking-widest">
@@ -51,7 +51,7 @@ export default function Footer() {
 
                 {/* Newsletter */}
                 <div className="flex flex-col gap-4">
-                    <span className="text-xs uppercase tracking-widest text-orange-600 font-bold">
+                    <span className="text-xs uppercase tracking-widest text-primary font-bold">
                         Newsletter
                     </span>
                     <div className="flex">
@@ -60,7 +60,7 @@ export default function Footer() {
                             placeholder="Email"
                             className="bg-zinc-200 dark:bg-zinc-800 rounded-l-md px-4 py-2 w-full text-xs outline-none"
                         />
-                        <button className="bg-orange-600 text-white px-4 py-2 rounded-r-md text-xs font-bold">
+                        <button className="bg-primary text-white px-4 py-2 rounded-r-md text-xs font-bold">
                             Join
                         </button>
                     </div>

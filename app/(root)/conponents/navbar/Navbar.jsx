@@ -75,8 +75,8 @@ export default function Navbar() {
 
     // active link style
     const getLinkClass = (path) => {
-        return `hover:text-orange-600 transition-colors duration-200 ${isActive(path)
-            ? 'text-orange-600 font-semibold border-b-2 border-orange-600'
+        return `hover:text-primary transition-colors duration-200 ${isActive(path)
+            ? 'text-primary font-semibold border-b-2 border-primary'
             : 'text-gray-700 dark:text-gray-300'
             }`;
     };
@@ -101,7 +101,7 @@ export default function Navbar() {
                             <li>
                                 {loadingLink === '/' ? (
                                     <span className="flex items-center gap-2 text-gray-500">
-                                        <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                        <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                     </span>
                                 ) : (
@@ -117,7 +117,7 @@ export default function Navbar() {
                             <li>
                                 {loadingLink === '/shop' ? (
                                     <span className="flex items-center gap-2 text-gray-500">
-                                        <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                        <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                     </span>
                                 ) : (
@@ -133,7 +133,7 @@ export default function Navbar() {
                             <li>
                                 {loadingLink === '/my-cart' ? (
                                     <span className="flex items-center gap-2 text-gray-500">
-                                        <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                        <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                     </span>
                                 ) : (
@@ -150,7 +150,7 @@ export default function Navbar() {
                                 <li>
                                     {loadingLink === '/about' ? (
                                         <span className="flex items-center gap-2 text-gray-500">
-                                            <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                            <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                         </span>
                                     ) : (
@@ -173,13 +173,13 @@ export default function Navbar() {
                         {/* সার্চ আইকন */}
                         {loadingLink === '/search' ? (
                             <div className="btn btn-ghost btn-circle">
-                                <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                <span className="loading loading-infinity loading-xs text-primary"></span>
                             </div>
                         ) : (
                             <Link
                                 href="/search"
                                 onClick={(e) => handleNavigation('/search', e)}
-                                className={`btn btn-ghost btn-circle ${isActive('/search') ? 'text-orange-600 bg-orange-50 dark:bg-orange-950/30' : ''
+                                className={`btn btn-ghost btn-circle ${isActive('/search') ? 'text-primary bg-orange-50 dark:bg-orange-950/30' : ''
                                     }`}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -195,7 +195,7 @@ export default function Navbar() {
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
-                                    <span className="badge badge-sm indicator-item bg-orange-600 text-white">8</span>
+                                    <span className="badge badge-sm indicator-item bg-primary text-white">8</span>
                                 </div>
                             </div>
                             <div
@@ -214,7 +214,7 @@ export default function Navbar() {
                                             <Link
                                                 href="/my-cart"
                                                 onClick={(e) => handleNavigation('/my-cart', e)}
-                                                className="btn btn-primary btn-block bg-orange-600 hover:bg-orange-700 border-none"
+                                                className="btn btn-primary btn-block bg-primary hover:bg-orange-700 border-none"
                                             >
                                                 View cart
                                             </Link>
@@ -228,7 +228,7 @@ export default function Navbar() {
                         {isAuthenticated && (
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-orange-400 to-primary flex items-center justify-center">
                                         <span className="text-white text-xs font-bold">{session?.user?.name?.charAt(0)?.toUpperCase()}</span>
                                     </div>
                                 </div>
@@ -241,14 +241,14 @@ export default function Navbar() {
                                     <li>
                                         {loadingLink === '/profile' ? (
                                             <span className="flex items-center gap-2 text-gray-500">
-                                                <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                                <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                             </span>
                                         ) : (
                                             <Link
                                                 href="/profile"
                                                 onClick={(e) => handleNavigation('/profile', e)}
-                                                className={`hover:text-orange-600 ${isActive('/profile') ? 'text-orange-600 bg-orange-50 dark:bg-orange-950/30' : ''
+                                                className={`hover:text-primary ${isActive('/profile') ? 'text-primary bg-orange-50 dark:bg-orange-950/30' : ''
                                                     }`}
                                             >
                                                 Profile <span className="badge badge-sm bg-orange-500 text-white">New</span>
@@ -258,14 +258,14 @@ export default function Navbar() {
                                     <li>
                                         {loadingLink === '/orders' ? (
                                             <span className="flex items-center gap-2 text-gray-500">
-                                                <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                                <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                             </span>
                                         ) : (
                                             <Link
                                                 href="/orders"
                                                 onClick={(e) => handleNavigation('/orders', e)}
-                                                className={`hover:text-orange-600 ${isActive('/orders') ? 'text-orange-600 bg-orange-50 dark:bg-orange-950/30' : ''
+                                                className={`hover:text-primary ${isActive('/orders') ? 'text-primary bg-orange-50 dark:bg-orange-950/30' : ''
                                                     }`}
                                             >
                                                 Orders
@@ -275,14 +275,14 @@ export default function Navbar() {
                                     <li>
                                         {loadingLink === '/dashboard' ? (
                                             <span className="flex items-center gap-2 text-gray-500">
-                                                <span className="loading loading-infinity loading-xs text-orange-600"></span>
+                                                <span className="loading loading-infinity loading-xs text-primary"></span>
 
                                             </span>
                                         ) : (
                                             <Link
                                                 href="/dashboard"
                                                 onClick={(e) => handleNavigation('/dashboard', e)}
-                                                className={`hover:text-orange-600 ${isActive('/dashboard') ? 'text-orange-600 bg-orange-50 dark:bg-orange-950/30' : ''
+                                                className={`hover:text-primary ${isActive('/dashboard') ? 'text-primary bg-orange-50 dark:bg-orange-950/30' : ''
                                                     }`}
                                             >
                                                 Dashboard

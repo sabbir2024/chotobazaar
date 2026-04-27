@@ -19,11 +19,11 @@ export default function ProductInfoTabs({ product }) {
         const hasHalfStar = numRating % 1 !== 0;
 
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<IoStar key={`full-${i}`} className="text-orange-600 text-sm sm:text-base" />);
+            stars.push(<IoStar key={`full-${i}`} className="text-primary text-sm sm:text-base" />);
         }
 
         if (hasHalfStar) {
-            stars.push(<IoStarHalf key="half" className="text-orange-600 text-sm sm:text-base" />);
+            stars.push(<IoStarHalf key="half" className="text-primary text-sm sm:text-base" />);
         }
 
         const emptyStars = 5 - stars.length;
@@ -105,7 +105,7 @@ export default function ProductInfoTabs({ product }) {
         processedDesc = processedDesc.replace(/<strong/g, '<strong class="text-gray-900 dark:text-white font-bold"');
         processedDesc = processedDesc.replace(/<b/g, '<b class="text-gray-900 dark:text-white font-bold"');
         processedDesc = processedDesc.replace(/<li/g, '<li class="text-gray-700 dark:text-gray-300"');
-        processedDesc = processedDesc.replace(/<a/g, '<a class="text-orange-600 dark:text-orange-400 hover:underline"');
+        processedDesc = processedDesc.replace(/<a/g, '<a class="text-primary dark:text-orange-400 hover:underline"');
         processedDesc = processedDesc.replace(/<span/g, '<span class="text-gray-700 dark:text-gray-300"');
         processedDesc = processedDesc.replace(/<div/g, '<div class="text-gray-700 dark:text-gray-300"');
 
@@ -117,10 +117,10 @@ export default function ProductInfoTabs({ product }) {
             <div className="card-body p-4 sm:p-6">
                 {/* Floating glassmorphism accent */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-400/20 rounded-full blur-2xl z-0 pointer-events-none"></div>
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-600/10 rounded-full blur-2xl z-0 pointer-events-none"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl z-0 pointer-events-none"></div>
 
                 {/* Category Badge */}
-                <p className="text-orange-600 dark:text-orange-500 text-xs sm:text-sm font-bold tracking-wider uppercase">
+                <p className="text-primary dark:text-orange-500 text-xs sm:text-sm font-bold tracking-wider uppercase">
                     {getCategory()}
                 </p>
 
@@ -141,7 +141,7 @@ export default function ProductInfoTabs({ product }) {
 
                 {/* Price Section */}
                 <div className="flex items-center gap-3 flex-wrap">
-                    <span className="text-2xl sm:text-3xl font-black text-orange-600 dark:text-orange-500">
+                    <span className="text-2xl sm:text-3xl font-black text-primary dark:text-orange-500">
                         {formatPrice(getCurrentPrice())}
                     </span>
                     {getOriginalPrice() && (
@@ -150,7 +150,7 @@ export default function ProductInfoTabs({ product }) {
                         </span>
                     )}
                     {product.discount > 0 && (
-                        <span className="bg-orange-600 dark:bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                        <span className="bg-primary dark:bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold">
                             -{product.discount}%
                         </span>
                     )}
@@ -169,8 +169,8 @@ export default function ProductInfoTabs({ product }) {
                             className={`
                                 px-3 sm:px-4 py-2 text-sm sm:text-base font-semibold transition-all duration-200
                                 ${activeTab === tab.id
-                                    ? 'text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 dark:border-orange-500'
-                                    : 'text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-500'
+                                    ? 'text-primary dark:text-orange-500 border-b-2 border-primary dark:border-orange-500'
+                                    : 'text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-orange-500'
                                 }
                             `}
                         >
@@ -288,7 +288,7 @@ export default function ProductInfoTabs({ product }) {
                         onClick={handleCheckoutClick}
                     >
                         <button
-                            className="w-full py-3 rounded-xl bg-linear-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-bold uppercase tracking-wider text-sm shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                            className="w-full py-3 rounded-xl bg-linear-to-r from-primary to-orange-500 dark:from-orange-500 dark:to-primary text-white font-bold uppercase tracking-wider text-sm shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                             disabled={isLoading}
                         >
                             <span className="absolute left-0 top-0 w-full h-full bg-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse pointer-events-none"></span>
@@ -312,7 +312,7 @@ export default function ProductInfoTabs({ product }) {
                         </button>
                     </Link>
 
-                    <button className="flex-1 py-3 rounded-xl border-2 border-orange-600 dark:border-orange-500 text-orange-600 dark:text-orange-500 font-bold uppercase tracking-wider text-sm hover:bg-orange-600 dark:hover:bg-orange-500 hover:text-white transition-all duration-200 flex items-center justify-center gap-2">
+                    <button className="flex-1 py-3 rounded-xl border-2 border-primary dark:border-orange-500 text-primary dark:text-orange-500 font-bold uppercase tracking-wider text-sm hover:bg-primary dark:hover:bg-orange-500 hover:text-white transition-all duration-200 flex items-center justify-center gap-2">
                         <IoCall className="text-base" />
                         01628507832
                     </button>

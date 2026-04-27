@@ -1,6 +1,7 @@
 // app/product/[id]/components/RelatedProducts.jsx
 import Link from "next/link";
 import { apiUrl } from "../../../../../components/url";
+import Card from "../../../../../components/Card";
 
 // ট্যাগ অনুযায়ী রিলেটেড প্রোডাক্ট ফেচ করার ফাংশন
 async function fetchRelatedProductsByTags(currentId, tags) {
@@ -13,7 +14,6 @@ async function fetchRelatedProductsByTags(currentId, tags) {
             { cache: 'no-cache' }
         );
         const result = await res.json();
-        console.log('RelatedProducts--res=>', result);
         return result.success ? result.data : [];
     } catch (error) {
         console.error('Related products fetch error:', error);
@@ -42,44 +42,7 @@ export default async function RelatedProducts({ currentProductId, tags }) {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {relatedProducts.map((product) => (
-                    <Link
-                        href={`/product/${product._id}`}
-                        key={product._id}
-                        className="group"
-                    >
-                        <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 bg-white">
-                            <div className="relative overflow-hidden h-48 bg-gray-100">
-                                <img
-                                    src={product.primaryImage || product.images?.[0]}
-                                    alt={product.productName}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                                />
-                                {/* ট্যাগ ব্যাজ */}
-                                {product.tags && product.tags[0] && (
-                                    <span className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                                        {product.tags[0]}
-                                    </span>
-                                )}
-                            </div>
-                            <div className="p-3">
-                                <p className="font-semibold text-sm line-clamp-2 mb-2 min-h-[40px]">
-                                    {product.productName.length > 50
-                                        ? product.productName.substring(0, 50) + '...'
-                                        : product.productName}
-                                </p>
-                                <div className="flex items-center gap-2">
-                                    <p className="text-red-600 font-bold">
-                                        ৳{product.basePrice}
-                                    </p>
-                                    {product.comparePrice && (
-                                        <p className="text-gray-400 text-sm line-through">
-                                            ৳{product.comparePrice}
-                                        </p>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </Link>
+                    <Card product={product} key={product._id} />
                 ))}
             </div>
         </div>

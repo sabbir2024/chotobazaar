@@ -20,8 +20,8 @@ export default function Registard({ user, onLoginSuccess }) {
                         id="login-tab"
                         onClick={() => setActiveTab('login')}
                         className={`tab rounded-lg px-6 py-2 font-semibold transition-all ${activeTab === 'login'
-                            ? 'bg-orange-600 text-white'
-                            : 'text-gray-600 dark:text-gray-400 hover:text-orange-600'
+                            ? 'bg-primary text-white'
+                            : 'text-gray-600 dark:text-gray-400 hover:text-primary'
                             }`}
                     >
                         Login
@@ -30,8 +30,8 @@ export default function Registard({ user, onLoginSuccess }) {
                         id="signup-tab"
                         onClick={() => setActiveTab('signup')}
                         className={`tab rounded-lg px-6 py-2 font-semibold transition-all ${activeTab === 'signup'
-                            ? 'bg-orange-600 text-white'
-                            : 'text-gray-600 dark:text-gray-400 hover:text-orange-600'
+                            ? 'bg-primary text-white'
+                            : 'text-gray-600 dark:text-gray-400 hover:text-primary'
                             }`}
                     >
                         Sign Up
