@@ -1,12 +1,14 @@
+// app/product/[id]/page.js
 import Link from "next/link";
 import Container from "../../../../components/Container";
 import NewsMarquee from "../../../../components/NewsMarquee";
-import { apiUrl } from "../../../../components/url";
 import ImageHover from "./components/ImageHover";
 import ProductInfo from "./components/ProductInfo";
+import ProductTags from "./components/ProductTags";      // যোগ করুন
+import RelatedProducts from "./components/RelatedProducts"; // যোগ করুন
 import { FaCartShopping, FaRegFolderOpen } from "react-icons/fa6";
 import { AiOutlineHome } from "react-icons/ai";
-
+import { apiUrl } from "../../../../components/url";
 
 export default async function Page({ params }) {
     const resolvedParams = await params;
@@ -28,9 +30,9 @@ export default async function Page({ params }) {
     }
 
     const imageUrl = product.images;
+
     return (
         <Container>
-
             <div className="breadcrumbs text-sm">
                 <ul>
                     <li>
@@ -57,6 +59,7 @@ export default async function Page({ params }) {
                     </li>
                 </ul>
             </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                     <ImageHover imageUrl={imageUrl} />
@@ -67,7 +70,13 @@ export default async function Page({ params }) {
                     </div>
                 </div>
             </div>
+
             <NewsMarquee />
+            {/* রিলেটেড প্রোডাক্ট - ট্যাগ ভিত্তিক ডাটা ফেচ করবে */}
+            <RelatedProducts
+                currentProductId={product._id}
+                tags={product.tags}
+            />
 
         </Container>
     );

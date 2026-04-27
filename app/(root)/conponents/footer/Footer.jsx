@@ -1,3 +1,5 @@
+import Logo from "../../../components/Logo";
+
 export default function Footer() {
     return (
         <footer className="bg-zinc-100 dark:bg-zinc-900 font-bold w-full mt-auto">
@@ -7,7 +9,7 @@ export default function Footer() {
                 {/* Brand */}
                 <div className="md:col-span-1">
                     <div className="text-xl font-black text-orange-600 dark:text-orange-600 mb-4">
-                        Choto Bazaar
+                        <Logo />
                     </div>
                     <p className="text-zinc-400 text-xs leading-relaxed max-w-xs">
                         Elevating the everyday through curated design and intentional living.

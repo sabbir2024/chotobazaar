@@ -91,16 +91,8 @@ export default function Navbar() {
                 <Whatsapp />
                 <div className="navbar  sticky top-0  bg-base-100 dark:bg-zinc-900">
                     <div className="navbar-start flex">
-                        <span className="btn btn-ghost text-xl">
-                            <Logo />
-                        </span>
-                        <Link
-                            href="/"
-                            onClick={(e) => handleNavigation('/', e)}
-                            className="font-bold"
-                        >
-                            Choto<span className="text-orange-600 text-xl font-bold hover:text-orange-700 dark:text-orange-500 transition-colors">Bazaar</span>
-                        </Link>
+                        <Logo />
+
                     </div>
 
                     {/* নেভিগেশন মেনু - LG স্ক্রিনে স্ট্যাটিক */}
