@@ -1,4 +1,3 @@
-// components/carousel/Carousel.jsx
 import Link from "next/link";
 import { apiUrl } from "../../../components/url";
 import Card from "../../../components/Card";
@@ -63,7 +62,7 @@ export default async function Carousel({ category, title, icon, badge, subtitle,
                 {/* Carousel Items */}
                 <div className="carousel carousel-center rounded-box space-x-3 md:space-x-4 p-3 md:p-4 overflow-x-auto scrollbar-hide">
                     {products.map((product, index) => (
-                        <div key={product._id || index} className="carousel-item">
+                        <div key={product._id || index} className="carousel-item sm:mx-w-md">
                             <div className="w-40 sm:w-44 md:w-52 lg:w-56 h-72 sm:h-80 md:h-96">
                                 <Card product={product} />
                             </div>
@@ -80,7 +79,6 @@ export default async function Carousel({ category, title, icon, badge, subtitle,
             </div>
         );
     } catch (error) {
-        console.error(`Error loading carousel for category ${category}:`, error);
         return null;
     }
 }

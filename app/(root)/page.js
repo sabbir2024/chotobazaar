@@ -1,4 +1,3 @@
-// app/page.jsx
 import Container from "../components/Container";
 import NewsMarquee from "../components/NewsMarquee";
 import Carousel from "./conponents/carousel/Carousel";
@@ -14,7 +13,7 @@ const categoriesConfig = {
         badge: 'New Arrivals',
         featured: true,
         color: 'bg-orange-50',
-        banner: '/images/food-banner.jpg'
+        banner: '/images/food-banner.png'
     },
     'Clothing': {
         title: 'Fashion Collection',
@@ -71,7 +70,6 @@ const categoriesConfig = {
         banner: '/images/beauty-banner.jpg'
     }
 };
-
 export default async function Page() {
     // Safe check for categories
     const categories = Object.keys(categoriesConfig || {});
