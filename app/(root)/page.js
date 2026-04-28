@@ -1,10 +1,11 @@
+// app/page.jsx
 import Container from "../components/Container";
 import NewsMarquee from "../components/NewsMarquee";
-import Carousel from "./conponents/carousel/Carousel";
+import CarouselServer from "./conponents/carousel/CarouselServer";
 import CategoryBento from "./conponents/CategoryBento/CategoryBento";
 import Hero from "./conponents/hero/Hero";
 
-// Category configuration with titles, icons, and badges
+// Category configuration
 const categoriesConfig = {
     'Food': {
         title: 'Fresh & Organic Food',
@@ -13,7 +14,6 @@ const categoriesConfig = {
         badge: 'New Arrivals',
         featured: true,
         color: 'bg-orange-50',
-        banner: '/images/food-banner.png'
     },
     'Clothing': {
         title: 'Fashion Collection',
@@ -22,7 +22,6 @@ const categoriesConfig = {
         badge: 'Summer Sale',
         featured: true,
         color: 'bg-blue-50',
-        banner: '/images/clothing-banner.jpg'
     },
     'Baby': {
         title: 'Baby Care Essentials',
@@ -31,7 +30,6 @@ const categoriesConfig = {
         badge: 'Best Sellers',
         featured: true,
         color: 'bg-pink-50',
-        banner: '/images/baby-banner.jpg'
     },
     'Fitness': {
         title: 'Fitness & Wellness',
@@ -40,7 +38,6 @@ const categoriesConfig = {
         badge: '-20% Off',
         featured: true,
         color: 'bg-green-50',
-        banner: '/images/fitness-banner.jpg'
     },
     'Decor': {
         title: 'Home Decoration',
@@ -49,7 +46,6 @@ const categoriesConfig = {
         badge: 'New Collection',
         featured: true,
         color: 'bg-purple-50',
-        banner: '/images/decor-banner.jpg'
     },
     'Tech': {
         title: 'Latest Technology',
@@ -58,7 +54,6 @@ const categoriesConfig = {
         badge: 'Limited Offer',
         featured: true,
         color: 'bg-gray-50',
-        banner: '/images/tech-banner.jpg'
     },
     'Beauty': {
         title: 'Beauty & Cosmetics',
@@ -67,14 +62,11 @@ const categoriesConfig = {
         badge: 'Trending Now',
         featured: true,
         color: 'bg-red-50',
-        banner: '/images/beauty-banner.jpg'
     }
 };
-export default async function Page() {
-    // Safe check for categories
-    const categories = Object.keys(categoriesConfig || {});
 
-    // Featured categories for Bento (all are featured true now)
+export default async function Page() {
+    const categories = Object.keys(categoriesConfig);
     const featuredCategories = categories.filter(cat => categoriesConfig[cat]?.featured === true);
 
     return (
@@ -97,12 +89,12 @@ export default async function Page() {
                 </div>
             )}
 
-            {/* Dynamic Carousels for each category */}
+            {/* Dynamic Carousels - Using Server Component */}
             <div className="space-y-8 md:space-y-12">
                 {categories.map((cat) => {
                     const config = categoriesConfig[cat];
                     return (
-                        <Carousel
+                        <CarouselServer
                             key={cat}
                             category={cat}
                             title={config.title}
