@@ -33,7 +33,7 @@ export default async function RelatedProducts({ currentProductId, tags }) {
                     সম্পর্কিত পণ্য
                 </h2>
                 <Link
-                    href={`/shop?tags=${encodeURIComponent(tags?.join(','))}`}
+                    href={`/shop?cetagory=${encodeURIComponent(tags?.join(','))}`}
                     className="text-sm text-blue-600 hover:text-blue-700"
                 >
                     সব দেখুন →

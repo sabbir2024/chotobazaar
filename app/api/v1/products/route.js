@@ -65,7 +65,6 @@ export const GET = async (req) => {
         });
 
     } catch (error) {
-        console.error('API Error:', error);
         return NextResponse.json({
             success: false,
             error: error.message

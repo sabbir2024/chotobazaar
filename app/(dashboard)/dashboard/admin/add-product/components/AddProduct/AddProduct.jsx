@@ -44,7 +44,9 @@ export default function AddProduct() {
         'Baby',
         'Fitness',
         'Decor',
-        'Tech'
+        'Tech',
+        'Food',
+        'Beauty'
     ];
 
     const categoryIcons = {
@@ -52,7 +54,9 @@ export default function AddProduct() {
         'Baby': '👶',
         'Fitness': '💪',
         'Decor': '🏠',
-        'Tech': '📱'
+        'Tech': '📱',
+        'Food': '𓎩',
+        'Beauty': '💄'
     };
 
     const categoryColors = {

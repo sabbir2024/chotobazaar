@@ -90,7 +90,6 @@ export default function EditProduct({ product = {} }) {
                     icon: "error",
                     confirmButtonColor: "#a63400"
                 });
-                console.error("Update failed:", result.error);
             }
         } catch (error) {
             // Show network error message
@@ -100,7 +99,6 @@ export default function EditProduct({ product = {} }) {
                 icon: "error",
                 confirmButtonColor: "#a63400"
             });
-            console.error("Error updating product:", error);
         } finally {
             setLoading(false);
         }
@@ -262,6 +260,7 @@ export default function EditProduct({ product = {} }) {
                                                 <option>Fitness</option>
                                                 <option>Decor</option>
                                                 <option>Tech</option>
+                                                <option>Food</option>
                                             </select>
                                         </div>
                                         <div>
