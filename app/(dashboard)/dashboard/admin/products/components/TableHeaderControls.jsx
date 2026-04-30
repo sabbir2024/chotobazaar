@@ -13,7 +13,7 @@ export default function TableHeaderControls({
                         search
                     </span> */}
                     <input
-                        className="w-full bg-surface-container border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20"
+                        className="w-full bg-surface-container dark:text-black border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20"
                         placeholder="Filter products..."
                         type="text"
                         value={searchQuery}
@@ -21,14 +21,14 @@ export default function TableHeaderControls({
                     />
                 </div>
                 <button className="bg-surface-container-low px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-surface-container transition-colors whitespace-nowrap">
-                    <span className="material-symbols-outlined text-base">filter_list</span>
+                    <span className="material-symbols-outlined dark:text-black text-base">filter_list</span>
                     Filters
                 </button>
             </div>
             <div className="flex items-center gap-2">
                 <span className="text-sm text-secondary-dim">Sort by:</span>
                 <select
-                    className="bg-transparent border-none text-sm font-bold focus:ring-0 cursor-pointer"
+                    className="bg-transparent dark:text-black border-none text-sm font-bold focus:ring-0 cursor-pointer"
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
                 >

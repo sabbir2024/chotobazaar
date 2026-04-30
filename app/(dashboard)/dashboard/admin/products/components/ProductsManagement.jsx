@@ -169,10 +169,10 @@ export default function ProductsManagement({ products = [] }) {
                                 className="bg-surface-container-lowest p-4 md:p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between group"
                             >
                                 <div>
-                                    <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-outline mb-1">
+                                    <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-outline  mb-1">
                                         {stat.title}
                                     </p>
-                                    <h3 className="text-2xl md:text-3xl font-extrabold">{stat.value}</h3>
+                                    <h3 className="text-2xl md:text-3xl dark:text-black font-extrabold">{stat.value}</h3>
                                     <p className={`text-xs font-bold mt-2 flex items-center gap-1 ${stat.changeType === 'positive' ? 'text-green-600' :
                                         stat.changeType === 'warning' ? 'text-error' : 'text-secondary-dim'
                                         }`}>
@@ -185,7 +185,7 @@ export default function ProductsManagement({ products = [] }) {
                                         {stat.change}
                                     </p>
                                 </div>
-                                <div className={`w-10 h-10 md:w-14 md:h-14 ${stat.iconBg} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                                <div className={`w-10 h-10 md:w-14 md:h-14 ${stat.iconBg} rounded-full dark:text-black flex items-center justify-center group-hover:scale-110 transition-transform`}>
                                     {stat.icon}
                                 </div>
                             </div>

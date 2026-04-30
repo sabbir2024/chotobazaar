@@ -11,7 +11,7 @@ export default async function page() {
         const data = await response.json();
         products = data.data;
     } catch (error) {
-        console.log('page--error=>', error);
+        // console.log('page--error=>', error);
     }
 
     return (
