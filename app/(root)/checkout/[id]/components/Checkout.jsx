@@ -151,8 +151,8 @@ export default function Checkout({ product }) {
                     html: `
                         <div class="text-left space-y-2">
                             <div class="bg-orange-50 dark:bg-orange-900/30 p-3 rounded-lg">
-                                <p class="text-sm text-gray-700 dark:text-gray-300">অর্ডার আইডি: <strong class="text-primary dark:text-orange-400">${result?.order_id || 'N/A'}</strong></p>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">মোট মূল্য: <strong class="text-primary dark:text-orange-400">৳${totalPrice}</strong></p>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">অর্ডার আইডি: <strong class="text-primary dark:text-primary">${result?.order_id || 'N/A'}</strong></p>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">মোট মূল্য: <strong class="text-primary dark:text-primary">৳${totalPrice}</strong></p>
                                 <p class="text-sm text-gray-700 dark:text-gray-300">পেমেন্ট মেথড: <strong>${formData.paymentMethod === 'cod' ? 'ক্যাশ অন ডেলিভারি' : formData.paymentMethod}</strong></p>
                             </div>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। ডেলিভারির জন্য ধন্যবাদ!</p>
@@ -342,8 +342,8 @@ export default function Checkout({ product }) {
     return (
         <div className="w-full mx-auto p-4 sm:p-6 bg-linear-to-br from-white to-orange-50/30 dark:from-zinc-900 dark:to-orange-950/20 rounded-2xl shadow-2xl border border-orange-100 dark:border-orange-900/50">
             {/* Header */}
-            <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-linear-to-r from-primary to-orange-500 text-white mb-3 shadow-lg">
+            <div className="text-center mb-6 ">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-linear-to-r from-primary to-primary text-white mb-3 shadow-lg">
                     <IoCartOutline className="text-3xl" />
                 </div>
                 <h3 className="font-bold text-2xl sm:text-3xl text-gray-800 dark:text-white">
@@ -357,7 +357,7 @@ export default function Checkout({ product }) {
                     {/* Customer Info Section */}
                     <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm p-5 rounded-2xl border border-orange-100 dark:border-orange-900/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-200 dark:border-orange-800">
-                            <div className="w-8 h-8 rounded-full bg-linear-to-r from-primary to-orange-500 flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-linear-to-r from-primary to-primary flex items-center justify-center">
                                 <IoPersonOutline className="text-white text-sm" />
                             </div>
                             <h4 className="font-semibold text-lg text-gray-800 dark:text-white">প্রাপকের তথ্য</h4>
@@ -367,7 +367,7 @@ export default function Checkout({ product }) {
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoPersonOutline className="text-orange-500" />
+                                        <IoPersonOutline className="text-primary" />
                                         পূর্ণ নাম *
                                     </span>
                                 </label>
@@ -377,7 +377,7 @@ export default function Checkout({ product }) {
                                     value={formData.name}
                                     onChange={handleInputChange}
                                     placeholder="আপনার নাম লিখুন"
-                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 />
                             </div>
@@ -385,7 +385,7 @@ export default function Checkout({ product }) {
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoMailOutline className="text-orange-500" />
+                                        <IoMailOutline className="text-primary" />
                                         ইমেইল
                                     </span>
                                 </label>
@@ -395,14 +395,14 @@ export default function Checkout({ product }) {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     placeholder="your@email.com"
-                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                 />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoCallOutline className="text-orange-500" />
+                                        <IoCallOutline className="text-primary" />
                                         মোবাইল নম্বর *
                                     </span>
                                 </label>
@@ -412,7 +412,7 @@ export default function Checkout({ product }) {
                                     value={formData.phone}
                                     onChange={handleInputChange}
                                     placeholder="01XXXXXXXXX"
-                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 />
                             </div>
@@ -420,7 +420,7 @@ export default function Checkout({ product }) {
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoBusinessOutline className="text-orange-500" />
+                                        <IoBusinessOutline className="text-primary" />
                                         বিভাগ *
                                     </span>
                                 </label>
@@ -428,7 +428,7 @@ export default function Checkout({ product }) {
                                     name="division"
                                     value={formData.division}
                                     onChange={handleInputChange}
-                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 >
                                     <option value="">বিভাগ নির্বাচন করুন</option>
@@ -443,7 +443,7 @@ export default function Checkout({ product }) {
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoLocationOutline className="text-orange-500" />
+                                        <IoLocationOutline className="text-primary" />
                                         জেলা *
                                     </span>
                                 </label>
@@ -451,7 +451,7 @@ export default function Checkout({ product }) {
                                     name="district"
                                     value={formData.district}
                                     onChange={handleInputChange}
-                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                     disabled={!formData.division}
                                 >
@@ -467,7 +467,7 @@ export default function Checkout({ product }) {
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoCashOutline className="text-orange-500" />
+                                        <IoCashOutline className="text-primary" />
                                         পেমেন্ট মেথড *
                                     </span>
                                 </label>
@@ -475,7 +475,7 @@ export default function Checkout({ product }) {
                                     name="paymentMethod"
                                     value={formData.paymentMethod}
                                     onChange={handleInputChange}
-                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     required
                                 >
                                     <option value="cod">💵 ক্যাশ অন ডেলিভারি</option>
@@ -485,7 +485,7 @@ export default function Checkout({ product }) {
                             <div className="form-control md:col-span-2">
                                 <label className="label">
                                     <span className="label-text font-medium flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                                        <IoLocationOutline className="text-orange-500" />
+                                        <IoLocationOutline className="text-primary" />
                                         পূর্ণ ঠিকানা *
                                     </span>
                                 </label>
@@ -494,7 +494,7 @@ export default function Checkout({ product }) {
                                     value={formData.address}
                                     onChange={handleInputChange}
                                     placeholder="আপনার বিস্তারিত ঠিকানা"
-                                    className="textarea textarea-bordered w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                                    className="textarea textarea-bordered w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                                     rows="2"
                                     required
                                 />
@@ -507,7 +507,7 @@ export default function Checkout({ product }) {
                         {/* Product Info */}
                         <div className="bg-linear-to-r from-orange-50 to-white dark:from-orange-950/20 dark:to-zinc-800 p-5 rounded-2xl border border-orange-100 dark:border-orange-900/50 shadow-lg">
                             <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-200 dark:border-orange-800">
-                                <div className="w-8 h-8 rounded-full bg-linear-to-r from-primary to-orange-500 flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-full bg-linear-to-r from-primary to-primary flex items-center justify-center">
                                     <IoCubeOutline className="text-white text-sm" />
                                 </div>
                                 <h4 className="font-semibold text-lg text-gray-800 dark:text-white">প্রোডাক্টের বিবরণ</h4>
@@ -525,7 +525,7 @@ export default function Checkout({ product }) {
                                     <div>
                                         <label className="label-text font-medium text-gray-600 dark:text-gray-400">প্রতি পিস মূল্য</label>
                                         <div className="bg-orange-100/50 dark:bg-orange-900/20 p-3 rounded-xl mt-1 border border-orange-200 dark:border-orange-800">
-                                            <p className="font-bold text-primary dark:text-orange-500 text-lg">৳{formData.productPrice}</p>
+                                            <p className="font-bold text-primary dark:text-primary text-lg">৳{formData.productPrice}</p>
                                         </div>
                                     </div>
 
@@ -544,7 +544,7 @@ export default function Checkout({ product }) {
                                                 name="quantity"
                                                 value={formData.quantity}
                                                 onChange={handleQuantityChange}
-                                                className="input input-bordered w-20 text-center rounded-xl focus:border-orange-500 bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white"
+                                                className="input input-bordered w-20 text-center rounded-xl focus:border-primary bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-900 dark:text-white"
                                                 min="1"
                                             />
                                             <button
@@ -561,8 +561,8 @@ export default function Checkout({ product }) {
                         </div>
 
                         {/* Price Calculation */}
-                        <div className="bg-linear-to-r from-primary to-orange-500 dark:from-orange-700 dark:to-primary p-5 rounded-2xl shadow-xl">
-                            <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-300 dark:border-orange-500">
+                        <div className="bg-linear-to-r from-primary to-primary dark:from-orange-700 dark:to-primary p-5 rounded-2xl shadow-xl">
+                            <div className="flex items-center gap-2 mb-4 pb-2 border-b border-orange-300 dark:border-primary">
                                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                                     <IoPricetagOutline className="text-white text-sm" />
                                 </div>
@@ -578,7 +578,7 @@ export default function Checkout({ product }) {
                                     <span className="text-orange-100 dark:text-orange-200">ডেলিভারি চার্জ</span>
                                     <span className="font-medium text-white">৳{deliveryCharge}</span>
                                 </div>
-                                <div className="border-t border-orange-300 dark:border-orange-500 my-2"></div>
+                                <div className="border-t border-orange-300 dark:border-primary my-2"></div>
                                 <div className="flex justify-between font-bold text-xl">
                                     <span className="text-white">সর্বমোট</span>
                                     <span className="text-white bg-white/20 dark:bg-white/10 px-3 py-1 rounded-full">৳{totalPrice}</span>
@@ -603,7 +603,7 @@ export default function Checkout({ product }) {
                             flex items-center justify-center gap-2
                             ${isSubmitting
                                 ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
-                                : 'bg-linear-to-r from-primary to-orange-500 dark:from-orange-500 dark:to-primary hover:shadow-2xl hover:scale-[1.02] active:scale-98'
+                                : 'bg-linear-to-r from-primary to-primary dark:from-primary dark:to-primary hover:shadow-2xl hover:scale-[1.02] active:scale-98'
                             }
                         `}
                     >

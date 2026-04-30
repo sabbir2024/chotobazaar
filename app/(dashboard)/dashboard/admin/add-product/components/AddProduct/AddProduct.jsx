@@ -212,7 +212,7 @@ export default function AddProduct() {
                             <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 font-bold">
                                 <span>Products</span>
                                 <span className="material-symbols-outlined text-[10px]">chevron_right</span>
-                                <span className="text-primary dark:text-orange-500">Add New</span>
+                                <span className="text-primary dark:text-primary">Add New</span>
                             </nav>
                             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">Catalog Item</h2>
                             <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm">Create a new unique product entry for your global storefront.</p>
@@ -229,7 +229,7 @@ export default function AddProduct() {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="px-6 md:px-8 py-2.5 md:py-3 rounded-xl bg-linear-to-br from-primary to-orange-700 dark:from-orange-500 dark:to-primary text-white text-xs md:text-sm font-bold shadow-lg active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                className="px-6 md:px-8 py-2.5 md:py-3 rounded-xl bg-linear-to-br from-primary to-orange-700 dark:from-primary dark:to-primary text-white text-xs md:text-sm font-bold shadow-lg active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                             >
                                 {isLoading ? (<>Saving...</>) : ('Save Product')}
                             </button>
@@ -248,7 +248,7 @@ export default function AddProduct() {
                             {/* General Information */}
                             <section className="bg-white dark:bg-gray-900 p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
                                 <h3 className="text-base md:text-lg font-bold mb-4 md:mb-6 text-gray-900 dark:text-white flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-primary dark:text-orange-500">info</span>
+                                    <span className="material-symbols-outlined text-primary dark:text-primary">info</span>
                                     General Information
                                 </h3>
                                 <div className="space-y-4 md:space-y-6">
@@ -260,7 +260,7 @@ export default function AddProduct() {
                                             name="productName"
                                             value={formData.productName}
                                             onChange={handleInputChange}
-                                            className={`w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 dark:focus:border-orange-500 transition-all ${errors.productName ? 'ring-2 ring-red-500 dark:ring-red-400' : ''}`}
+                                            className={`w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 focus:border-primary dark:focus:border-primary transition-all ${errors.productName ? 'ring-2 ring-red-500 dark:ring-red-400' : ''}`}
                                             placeholder="e.g. Minimalist Ceramic Vessel"
                                             type="text"
                                         />
@@ -277,7 +277,7 @@ export default function AddProduct() {
                                                     name="category"
                                                     value={formData.category}
                                                     onChange={handleInputChange}
-                                                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500/20 appearance-none cursor-pointer"
+                                                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 appearance-none cursor-pointer"
                                                 >
                                                     {categories.map(cat => (
                                                         <option key={cat} value={cat}>
@@ -305,7 +305,7 @@ export default function AddProduct() {
                                                 name="brand"
                                                 value={formData.brand}
                                                 onChange={handleInputChange}
-                                                className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500/20 transition-all"
+                                                className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all"
                                                 placeholder="e.g. Nike, Apple, IKEA"
                                                 type="text"
                                             />
@@ -322,7 +322,7 @@ export default function AddProduct() {
                                         <input
                                             value={formData.tags.join(', ')}
                                             onChange={handleTagsChange}
-                                            className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500/20 transition-all"
+                                            className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all"
                                             placeholder="handmade, ceramic, minimalist"
                                             type="text"
                                         />
@@ -345,7 +345,7 @@ export default function AddProduct() {
                             <section className="bg-white dark:bg-gray-900 p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
                                 <div className="flex items-center justify-between mb-4 md:mb-6">
                                     <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                                        <span className="material-symbols-outlined text-primary dark:text-orange-500">image</span>
+                                        <span className="material-symbols-outlined text-primary dark:text-primary">image</span>
                                         Media Assets
                                     </h3>
                                     <span className="text-[10px] text-gray-400 dark:text-gray-500 uppercase font-bold tracking-widest">Max 10 files, 10MB each</span>
@@ -384,7 +384,7 @@ export default function AddProduct() {
                                 <div className="bg-linear-to-r from-orange-50 to-orange-100/30 dark:from-orange-950/30 dark:to-orange-900/20 p-3 md:p-4 border-b border-gray-100 dark:border-gray-800">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-orange-500">Live Preview</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-primary">Live Preview</span>
                                             <p className="text-[9px] text-gray-500 dark:text-gray-400 mt-0.5">Product Listing Page View</p>
                                         </div>
                                         <div className="flex gap-1">
@@ -408,7 +408,7 @@ export default function AddProduct() {
                                                 <h3 className="font-bold text-sm line-clamp-2 flex-1 text-gray-900 dark:text-white">
                                                     {formData.productName || "Product Name"}
                                                 </h3>
-                                                <p className="text-primary dark:text-orange-500 font-bold text-sm whitespace-nowrap">
+                                                <p className="text-primary dark:text-primary font-bold text-sm whitespace-nowrap">
                                                     ${formData.basePrice || "0.00"}
                                                 </p>
                                             </div>
@@ -418,7 +418,7 @@ export default function AddProduct() {
                                                 </p>
                                             )}
                                             <div className="flex items-center justify-between mt-1">
-                                                <div className="flex text-orange-500 dark:text-orange-400">
+                                                <div className="flex text-primary dark:text-primary">
                                                     <IoMdStar />
                                                     <IoMdStar />
                                                     <IoMdStar />
@@ -439,7 +439,7 @@ export default function AddProduct() {
                                 <div className="bg-linear-to-r from-orange-50 to-orange-100/30 dark:from-orange-950/30 dark:to-orange-900/20 p-3 md:p-4 border-b border-gray-100 dark:border-gray-800">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-orange-500">Live Preview</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-primary">Live Preview</span>
                                             <p className="text-[9px] text-gray-500 dark:text-gray-400 mt-0.5">Product Details Page View</p>
                                         </div>
                                         <div className="flex gap-1">
@@ -463,7 +463,7 @@ export default function AddProduct() {
                                                 {formData.productName || "Product Name"}
                                             </h3>
                                             <div className="flex items-center gap-2 mt-1">
-                                                <div className="flex text-orange-500 dark:text-orange-400">
+                                                <div className="flex text-primary dark:text-primary">
                                                     {[...Array(4)].map((_, i) => (
                                                         <IoMdStar key={i} className="text-xs" />
                                                     ))}
@@ -472,7 +472,7 @@ export default function AddProduct() {
                                                 <span className="text-[10px] text-gray-400 dark:text-gray-500">(12 reviews)</span>
                                             </div>
                                             <div className="flex items-center gap-2 mt-2">
-                                                <span className="text-lg md:text-xl font-bold text-primary dark:text-orange-500">
+                                                <span className="text-lg md:text-xl font-bold text-primary dark:text-primary">
                                                     ${formData.basePrice || "0.00"}
                                                 </span>
                                                 {formData.comparePrice && (
@@ -501,7 +501,7 @@ export default function AddProduct() {
                                                     }}
                                                 />
                                             </div>
-                                            <button className="w-full mt-3 py-2 rounded-lg bg-primary dark:bg-orange-500 text-white text-xs font-bold hover:bg-orange-700 dark:hover:bg-primary transition-colors">
+                                            <button className="w-full mt-3 py-2 rounded-lg bg-primary dark:bg-primary text-white text-xs font-bold hover:bg-orange-700 dark:hover:bg-primary transition-colors">
                                                 Add to Cart
                                             </button>
                                         </div>
@@ -514,7 +514,7 @@ export default function AddProduct() {
                                 <div className="bg-linear-to-r from-orange-50 to-orange-100/30 dark:from-orange-950/30 dark:to-orange-900/20 p-3 md:p-4 border-b border-gray-100 dark:border-gray-800">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-orange-500">Live Preview</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary dark:text-primary">Live Preview</span>
                                             <p className="text-[9px] text-gray-500 dark:text-gray-400 mt-0.5">Cart / Quick View</p>
                                         </div>
                                         <div className="flex gap-1">
@@ -538,7 +538,7 @@ export default function AddProduct() {
                                                 {formData.productName || "Product Name"}
                                             </h4>
                                             <div className="flex items-center justify-between mt-1">
-                                                <span className="text-primary dark:text-orange-500 font-bold text-sm">
+                                                <span className="text-primary dark:text-primary font-bold text-sm">
                                                     ${formData.basePrice || "0.00"}
                                                 </span>
                                                 <div className="flex items-center gap-2">

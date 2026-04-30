@@ -132,7 +132,7 @@ export default function RichTextEditor({ value, onChange, placeholder = "Describ
             onClick={onClick}
             disabled={disabled}
             className={`p-2 rounded-lg transition-all duration-200 ${isActive
-                ? 'bg-orange-100 dark:bg-orange-900/30 text-primary dark:text-orange-400'
+                ? 'bg-orange-100 dark:bg-orange-900/30 text-primary dark:text-primary'
                 : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300'
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
             title={title}
@@ -207,7 +207,7 @@ export default function RichTextEditor({ value, onChange, placeholder = "Describ
                             }
                         }}
                         value={editor.isActive('heading') ? editor.getAttributes('heading').level : 'paragraph'}
-                        className="px-2 py-1.5 text-sm rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                        className="px-2 py-1.5 text-sm rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/20"
                     >
                         <option value="paragraph">Normal</option>
                         <option value="1">Heading 1</option>

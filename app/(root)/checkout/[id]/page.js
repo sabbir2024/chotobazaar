@@ -1,6 +1,7 @@
 import { ObjectId } from "mongodb";
 import dbConnect, { collectionlist } from "../../../lip/dbConnect";
 import Checkout from "./components/Checkout";
+import NewsMarquee from "../../../components/NewsMarquee";
 
 export default async function page({ params }) {
     const paramsId = await params;
@@ -11,6 +12,7 @@ export default async function page({ params }) {
     return (
         <div>
             <Checkout product={plainProduct} />
+            <NewsMarquee />
         </div>
     );
 }

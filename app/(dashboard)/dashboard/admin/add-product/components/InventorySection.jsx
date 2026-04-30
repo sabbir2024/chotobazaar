@@ -7,7 +7,7 @@ export default function InventorySection({ sku, quantity, weight, onSkuChange, o
     return (
         <section className="bg-surface-container-lowest dark:bg-gray-800 p-5 md:p-8 rounded-xl shadow-sm dark:shadow-gray-900/50">
             <h3 className="text-base md:text-lg font-bold mb-4 md:mb-6 text-on-surface dark:text-white flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary dark:text-orange-400">inventory</span>
+                <span className="material-symbols-outlined text-primary dark:text-primary">inventory</span>
                 Inventory
             </h3>
             <div className="space-y-4 md:space-y-6">
@@ -18,7 +18,7 @@ export default function InventorySection({ sku, quantity, weight, onSkuChange, o
                     <input
                         value={sku}
                         onChange={onSkuChange}
-                        className={`w-full bg-surface-container-highest dark:bg-gray-900 border-none rounded-xl px-4 py-3 md:py-4 text-sm dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 dark:focus:ring-orange-400/20 transition-all ${errors.sku ? 'ring-2 ring-red-500 dark:ring-red-400' : ''
+                        className={`w-full bg-surface-container-highest dark:bg-gray-900 border-none rounded-xl px-4 py-3 md:py-4 text-sm dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 transition-all ${errors.sku ? 'ring-2 ring-red-500 dark:ring-red-400' : ''
                             }`}
                         placeholder="SLRS-VSSL-01"
                         type="text"
@@ -42,7 +42,7 @@ export default function InventorySection({ sku, quantity, weight, onSkuChange, o
                         <input
                             value={quantity}
                             onChange={onQuantityChange}
-                            className={`flex-1 bg-surface-container-highest dark:bg-gray-900 border-none rounded-xl px-4 py-3 md:py-4 text-center text-sm font-bold dark:text-white focus:ring-2 focus:ring-primary/20 dark:focus:ring-orange-400/20 ${errors.quantity ? 'ring-2 ring-red-500 dark:ring-red-400' : ''
+                            className={`flex-1 bg-surface-container-highest dark:bg-gray-900 border-none rounded-xl px-4 py-3 md:py-4 text-center text-sm font-bold dark:text-white focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 ${errors.quantity ? 'ring-2 ring-red-500 dark:ring-red-400' : ''
                                 }`}
                             type="number"
                         />
@@ -65,7 +65,7 @@ export default function InventorySection({ sku, quantity, weight, onSkuChange, o
                     <input
                         value={weight}
                         onChange={onWeightChange}
-                        className="w-full bg-surface-container-highest dark:bg-gray-900 border-none rounded-xl px-4 py-3 md:py-4 text-sm dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 dark:focus:ring-orange-400/20 transition-all"
+                        className="w-full bg-surface-container-highest dark:bg-gray-900 border-none rounded-xl px-4 py-3 md:py-4 text-sm dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 transition-all"
                         placeholder="0.00"
                         type="number"
                         step="0.01"

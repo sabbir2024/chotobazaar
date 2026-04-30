@@ -4,8 +4,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import HeaderTopbar from '../HeaderTopbar';
+import AnalyticsBentoGrid from '../AnalyticsBentoGrid';
 
-export default function AdminDashboard() {
+export default function AdminDashboard({ user, orders }) {
     const [searchQuery, setSearchQuery] = useState('');
 
     // Product data
@@ -53,98 +55,10 @@ export default function AdminDashboard() {
     return (
         <main className="flex-1 p-4 md:p-6 lg:p-10 space-y-6 md:space-y-10 max-w-7xl mx-auto">
             {/* Header & Top Bar */}
-            <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                    <span className="text-primary  font-bold text-xs uppercase tracking-[0.2em] mb-2 block">
-                        Executive Overview
-                    </span>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-on-surface">
-                        Good Morning, Julian.
-                    </h1>
-                </div>
-
-                {/* User Profile Card */}
-                <div className="bg-surface-container-lowest p-4 rounded-2xl flex items-center gap-4 shadow-sm border border-outline-variant/10 group hover:scale-[1.02] transition-transform duration-300">
-                    <div className="relative">
-                        <img
-                            alt="User Profile"
-                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-primary object-cover"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh-V43BcDKnkU-xwTBMX5ter6T9vO4vXKSWRDlfbgXVPVKMrTjWmm43VvrxtRdnJwwoTFmNeuLDSaHQfuyFTxMtqDUoPhMavF6BrPNBE8eyDLr14Eiz9UhAmFu4z5ICtzPK0HmBtUNi05XJ2tsmeiK0M2MQDKxRJGpuewp2aAk7A4FjaFS-7ODxbS4KdeIEeEv4F0tN1INqhkvP3ef1ERBkEfOlykM8FvDCRqR-y9Tmm21BfaoxlKuOPV8eIAr0neEGRLgkNecpA"
-                        />
-                        <div className="absolute -bottom-1 -right-1 bg-primary text-on-primary w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center border-2 border-white">
-                            <span className="material-symbols-outlined text-[10px] sm:text-[12px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                                verified
-                            </span>
-                        </div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-bold truncate">Julian Vane</h3>
-                        <p className="text-xs text-on-surface-variant truncate">julian.v@minimalism.co</p>
-                    </div>
-                    <button className="text-[10px] font-bold uppercase tracking-widest px-2 sm:px-3 py-1.5 sm:py-2 bg-surface-container-low text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-colors whitespace-nowrap">
-                        Edit Profile
-                    </button>
-                </div>
-            </header>
+            <HeaderTopbar user={user} />
 
             {/* Analytics Bento Grid */}
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                {/* Stat Card 1 - Revenue */}
-                <div className="bg-surface-container-low p-5 sm:p-6 md:p-8 rounded-2xl flex flex-col justify-between group hover:bg-surface-container-lowest transition-colors duration-300">
-                    <div className="flex justify-between items-start">
-                        <div className="bg-primary/10 p-2 sm:p-3 rounded-xl text-primary">
-                            <span className="material-symbols-outlined text-xl sm:text-2xl">payments</span>
-                        </div>
-                        <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg">+12.5%</span>
-                    </div>
-                    <div className="mt-6 sm:mt-8">
-                        <p className="text-xs sm:text-sm text-on-surface-variant font-medium">Monthly Revenue</p>
-                        <h4 className="text-2xl sm:text-3xl font-black tracking-tighter mt-1">$124,592</h4>
-                    </div>
-                </div>
-
-                {/* Stat Card 2 - Orders */}
-                <div className="bg-surface-container-low p-5 sm:p-6 md:p-8 rounded-2xl flex flex-col justify-between group hover:bg-surface-container-lowest transition-colors duration-300">
-                    <div className="flex justify-between items-start">
-                        <div className="bg-tertiary/10 p-2 sm:p-3 rounded-xl text-tertiary">
-                            <span className="material-symbols-outlined text-xl sm:text-2xl">shopping_cart</span>
-                        </div>
-                        <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg">+4.2%</span>
-                    </div>
-                    <div className="mt-6 sm:mt-8">
-                        <p className="text-xs sm:text-sm text-on-surface-variant font-medium">Active Orders</p>
-                        <h4 className="text-2xl sm:text-3xl font-black tracking-tighter mt-1">1,284</h4>
-                    </div>
-                </div>
-
-                {/* Sales Performance Chart */}
-                <div className="sm:col-span-2 bg-surface-container-lowest p-5 sm:p-6 md:p-8 rounded-2xl shadow-sm relative overflow-hidden group">
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                        <div>
-                            <h4 className="text-base sm:text-lg font-bold">Sales Performance</h4>
-                            <p className="text-xs text-on-surface-variant">Real-time data synchronization</p>
-                        </div>
-                        <button className="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-                            <span className="material-symbols-outlined text-sm">download</span>
-                        </button>
-                    </div>
-
-                    {/* Graph Visualization */}
-                    <div className="h-24 sm:h-28 md:h-32 flex items-end gap-1 sm:gap-2 px-2">
-                        {[16, 12, 28, 20, 18, 22, 24].map((height, idx) => (
-                            <div
-                                key={idx}
-                                className={`flex-1 rounded-t-lg transition-all duration-500 group-hover:scale-y-105 ${idx === 2 ? 'bg-primary' : idx === 6 ? 'bg-tertiary/40' : 'bg-surface-container-highest'
-                                    }`}
-                                style={{ height: `${height * 4}px` }}
-                            />
-                        ))}
-                    </div>
-                    <div className="flex justify-between mt-4 text-[10px] text-on-surface-variant font-bold uppercase tracking-widest px-1">
-                        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-                    </div>
-                </div>
-            </section>
+            <AnalyticsBentoGrid user={user} orders={orders?.data} />
 
             {/* Product Table Section */}
             <section className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm">
@@ -171,7 +85,7 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Product Table */}
-                <div className="overflow-x-auto no-scrollbar">
+                <div className="overflow-x-auto no-scrollbar datk:text-black">
                     <table className="w-full text-left border-collapse min-w-[600px]">
                         <thead>
                             <tr className="text-[10px] uppercase tracking-[0.15em] text-on-surface-variant border-b border-surface-container">
@@ -235,7 +149,7 @@ export default function AdminDashboard() {
                     <div className="space-y-4">
                         <div className="bg-surface-container-lowest p-4 rounded-2xl flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                                <div className="w-2 h-2 rounded-full bg-primary"></div>
                                 <div>
                                     <p className="text-xs font-bold">Order #9921 - En Route</p>
                                     <p className="text-[10px] text-on-surface-variant">London, UK → New York, US</p>

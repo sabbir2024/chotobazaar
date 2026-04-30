@@ -129,7 +129,7 @@ export default function SignupSection({ onSuccess }) {
             </div>
 
             <div className="bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-bold p-6 md:p-10 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-bold mb-6 text-primary dark:text-orange-500">Create New Account</h3>
+                <h3 className="text-xl font-bold mb-6 text-primary dark:text-primary">Create New Account</h3>
 
                 {error && (
                     <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg text-sm">
@@ -144,7 +144,7 @@ export default function SignupSection({ onSuccess }) {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Full Name"
-                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                         required
                     />
                     <input
@@ -153,7 +153,7 @@ export default function SignupSection({ onSuccess }) {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Email Address"
-                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                         required
                     />
                     <input
@@ -162,7 +162,7 @@ export default function SignupSection({ onSuccess }) {
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password"
-                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                         required
                     />
                     <input
@@ -171,7 +171,7 @@ export default function SignupSection({ onSuccess }) {
                         value={formData.confirmPassword}
                         onChange={handleChange}
                         placeholder="Confirm Password"
-                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                         required
                     />
                     <button
@@ -190,7 +190,7 @@ export default function SignupSection({ onSuccess }) {
                 <div className="mt-4 text-center">
                     <button
                         onClick={() => document.getElementById('login-tab')?.click()}
-                        className="text-sm text-primary dark:text-orange-500 hover:underline"
+                        className="text-sm text-primary dark:text-primary hover:underline"
                     >
                         Already have an account? Sign in
                     </button>

@@ -95,12 +95,12 @@ export default function Sidebar() {
                 <div className="px-4 py-6 mb-4 border-b border-gray-100 dark:border-zinc-800">
                     {!isCollapsed ? (
                         <div>
-                            <h2 className="text-lg font-bold text-primary dark:text-orange-500">Admin Console</h2>
+                            <h2 className="text-lg font-bold text-primary dark:text-primary">Admin Console</h2>
                             <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest">Management Suite</p>
                         </div>
                     ) : (
                         <div className="flex justify-center">
-                            <div className="w-8 h-8 bg-linear-to-br from-orange-500 to-primary rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-linear-to-br from-primary to-primary rounded-lg flex items-center justify-center">
                                 <span className="text-white font-bold text-sm">A</span>
                             </div>
                         </div>
@@ -118,28 +118,28 @@ export default function Sidebar() {
                                 className={`
                                     flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group
                                     ${active
-                                        ? 'bg-orange-50 dark:bg-orange-950/30 text-primary dark:text-orange-400'
+                                        ? 'bg-orange-50 dark:bg-orange-950/30 text-primary dark:text-primary'
                                         : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-zinc-800'
                                     }
                                     ${isCollapsed ? 'justify-center' : ''}
                                 `}
                                 title={isCollapsed ? item.label : ''}
                             >
-                                <span className={`${active ? 'text-orange-500' : 'text-gray-500'} transition-colors`}>
+                                <span className={`${active ? 'text-primary' : 'text-gray-500'} transition-colors`}>
                                     {item.icon}
                                 </span>
                                 {!isCollapsed && (
                                     <span className="text-sm font-medium">{item.label}</span>
                                 )}
                                 {active && !isCollapsed && (
-                                    <span className="ml-auto w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                                    <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary"></span>
                                 )}
                             </Link>
                         );
                     })}
                 </nav>}
                 {session?.user?.role === 'user' && <nav>
-                    <li className="text-lg font-bold text-primary dark:text-orange-500 w-full mx-auto px-2">Setting</li>
+                    <li className="text-lg font-bold text-primary dark:text-primary w-full mx-auto px-2">Setting</li>
                 </nav>
                 }
                 {/* Bottom Section - Add Product Button & User Profile */}
@@ -148,7 +148,7 @@ export default function Sidebar() {
                     {session?.user?.role === 'admin' &&
                         <Link href={'/dashboard/admin/add-product'}>
                             <button className={`
-                        w-full mb-4 bg-linear-to-r from-orange-500 to-primary 
+                        w-full mb-4 bg-linear-to-r from-primary to-primary 
                         text-white font-bold rounded-xl transition-all duration-200
                         hover:shadow-lg hover:scale-[1.02] active:scale-95
                         ${isCollapsed ? 'px-2 py-2' : 'px-4 py-2.5'}
@@ -175,7 +175,7 @@ export default function Sidebar() {
                         hover:bg-gray-50 dark:hover:bg-zinc-800 cursor-pointer
                     `}>
                         <div className="relative shrink-0">
-                            <div className="w-8 h-8 rounded-full bg-linear-to-br from-orange-400 to-primary flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-linear-to-br from-primary to-primary flex items-center justify-center">
                                 <span className="text-white text-xs font-bold">{session?.user?.name?.charAt(0)?.toUpperCase()}</span>
                             </div>
                             <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white dark:border-zinc-900"></div>

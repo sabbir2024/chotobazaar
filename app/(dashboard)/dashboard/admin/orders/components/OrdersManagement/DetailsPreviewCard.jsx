@@ -87,7 +87,7 @@ export default function DetailsPreviewCard({ orders }) {
                             </div>
                             <div className="w-full h-1.5 md:h-2 bg-gray-100 rounded-full overflow-hidden">
                                 <div
-                                    className="h-full bg-orange-500 rounded-full transition-all duration-500"
+                                    className="h-full bg-primary rounded-full transition-all duration-500"
                                     style={{ width: `${warehousePercent}%` }}
                                 ></div>
                             </div>

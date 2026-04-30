@@ -29,7 +29,7 @@ export default async function RelatedProducts({ currentProductId, tags }) {
     return (
         <div className="mt-12">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-800">
+                <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
                     সম্পর্কিত পণ্য
                 </h2>
                 <Link

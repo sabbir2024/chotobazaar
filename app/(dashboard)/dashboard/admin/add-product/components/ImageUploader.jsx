@@ -36,7 +36,6 @@ export default function ImageUploader({ images, onImagesChange, previewImage, on
                 throw new Error(data.error?.message || 'Upload failed');
             }
         } catch (error) {
-            console.error('ImageBB upload error:', error);
             return {
                 success: false,
                 error: error.message

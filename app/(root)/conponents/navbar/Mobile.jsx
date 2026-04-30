@@ -105,8 +105,8 @@ export default function Mobile({ session, status, isLoading, isAuthenticated }) 
                                 key={item.href}
                                 onClick={(e) => handleNavigation(item.href, e)}
                                 className={`flex flex-col items-center justify-center gap-1 py-2 px-3 rounded-lg transition-all ${isItemActive
-                                    ? "text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30"
-                                    : "text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                    ? "text-primary dark:text-primary bg-orange-50 dark:bg-orange-950/30"
+                                    : "text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700"
                                     }`}
                             >
                                 <div className="flex items-center justify-center">
@@ -114,7 +114,7 @@ export default function Mobile({ session, status, isLoading, isAuthenticated }) 
                                 </div>
                                 <span className="text-xs font-medium">
                                     {isItemLoading ? (
-                                        <span className="loading loading-infinity loading-xs text-primary dark:text-orange-500"></span>
+                                        <span className="loading loading-infinity loading-xs text-primary dark:text-primary"></span>
                                     ) : (
                                         item.label
                                     )}
@@ -135,11 +135,11 @@ export default function Mobile({ session, status, isLoading, isAuthenticated }) 
                             <button
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                 className={`flex flex-col items-center justify-center gap-1 py-2 px-3 rounded-lg transition-all ${isDropdownOpen
-                                    ? 'text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30'
-                                    : 'text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700'
+                                    ? 'text-primary dark:text-primary bg-orange-50 dark:bg-orange-950/30'
+                                    : 'text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'
                                     }`}
                             >
-                                <div className="w-8 h-8 rounded-full bg-linear-to-br from-orange-400 to-primary flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-full bg-linear-to-br from-primary to-primary flex items-center justify-center">
                                     <span className="text-white text-xs font-bold">{session?.user?.name?.charAt(0)?.toUpperCase()}</span>
                                 </div>
                                 <span className="text-xs font-medium">Account</span>
@@ -153,20 +153,20 @@ export default function Mobile({ session, status, isLoading, isAuthenticated }) 
                                     <li>
                                         <button
                                             onClick={() => handleNavigation('/profile')}
-                                            className={`w-full text-left hover:text-primary dark:hover:text-orange-500 ${isActive('/profile')
-                                                ? 'text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30'
+                                            className={`w-full text-left hover:text-primary dark:hover:text-primary ${isActive('/profile')
+                                                ? 'text-primary dark:text-primary bg-orange-50 dark:bg-orange-950/30'
                                                 : 'text-gray-700 dark:text-gray-300'
                                                 }`}
                                         >
                                             Profile
-                                            <span className="badge badge-sm bg-orange-500 text-white ml-2">New</span>
+                                            <span className="badge badge-sm bg-primary text-white ml-2">New</span>
                                         </button>
                                     </li>
                                     <li>
                                         <button
                                             onClick={() => handleNavigation('/orders')}
-                                            className={`w-full text-left hover:text-primary dark:hover:text-orange-500 ${isActive('/orders')
-                                                ? 'text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30'
+                                            className={`w-full text-left hover:text-primary dark:hover:text-primary ${isActive('/orders')
+                                                ? 'text-primary dark:text-primary bg-orange-50 dark:bg-orange-950/30'
                                                 : 'text-gray-700 dark:text-gray-300'
                                                 }`}
                                         >
@@ -176,8 +176,8 @@ export default function Mobile({ session, status, isLoading, isAuthenticated }) 
                                     <li>
                                         <button
                                             onClick={() => handleNavigation('/dashboard')}
-                                            className={`w-full text-left hover:text-primary dark:hover:text-orange-500 ${isActive('/dashboard')
-                                                ? 'text-primary dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30'
+                                            className={`w-full text-left hover:text-primary dark:hover:text-primary ${isActive('/dashboard')
+                                                ? 'text-primary dark:text-primary bg-orange-50 dark:bg-orange-950/30'
                                                 : 'text-gray-700 dark:text-gray-300'
                                                 }`}
                                         >

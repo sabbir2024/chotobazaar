@@ -22,7 +22,7 @@ export default function ProductImageGallery({ imageUrl = [] }) {
                             className={`
                                 group relative cursor-pointer rounded-lg overflow-hidden border-2 transition-all duration-200
                                 ${selectedImage === index
-                                    ? 'border-orange-500 ring-2 ring-orange-500/20'
+                                    ? 'border-primary ring-2 ring-primary/20'
                                     : 'border-gray-200 dark:border-gray-700 hover:border-orange-300'
                                 }
                             `}
@@ -35,7 +35,7 @@ export default function ProductImageGallery({ imageUrl = [] }) {
                                 />
                             </div>
                             {selectedImage === index && (
-                                <div className="absolute inset-0 bg-orange-500/10"></div>
+                                <div className="absolute inset-0 bg-primary/10"></div>
                             )}
                         </button>
                     ))}
@@ -117,7 +117,7 @@ export default function ProductImageGallery({ imageUrl = [] }) {
                             className={`
                                 shrink-0 cursor-pointer rounded-lg overflow-hidden border-2 transition-all duration-200
                                 ${selectedImage === index
-                                    ? 'border-orange-500 shadow-lg scale-95'
+                                    ? 'border-primary shadow-lg scale-95'
                                     : 'border-gray-200 dark:border-gray-700 opacity-70 hover:opacity-100'
                                 }
                             `}

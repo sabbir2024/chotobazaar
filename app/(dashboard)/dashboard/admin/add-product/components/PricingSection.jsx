@@ -5,7 +5,7 @@ export default function PricingSection({ basePrice, comparePrice, onBasePriceCha
     return (
         <section className="bg-white dark:bg-gray-800 p-5 md:p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 transition-colors duration-200">
             <h3 className="text-base md:text-lg font-bold mb-4 md:mb-6 text-gray-900 dark:text-white flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary dark:text-orange-400">payments</span>
+                <span className="material-symbols-outlined text-primary dark:text-primary">payments</span>
                 Pricing
             </h3>
             <div className="space-y-4 md:space-y-6">
@@ -18,7 +18,7 @@ export default function PricingSection({ basePrice, comparePrice, onBasePriceCha
                         <input
                             value={basePrice}
                             onChange={onBasePriceChange}
-                            className={`w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl pl-8 pr-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500/20 dark:focus:ring-orange-400/20 focus:border-orange-500 dark:focus:border-orange-400 transition-all ${errors.basePrice ? 'ring-2 ring-red-500 dark:ring-red-400 border-red-500 dark:border-red-400' : ''
+                            className={`w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl pl-8 pr-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 focus:border-primary dark:focus:border-primary transition-all ${errors.basePrice ? 'ring-2 ring-red-500 dark:ring-red-400 border-red-500 dark:border-red-400' : ''
                                 }`}
                             placeholder="0.00"
                             type="number"
@@ -38,7 +38,7 @@ export default function PricingSection({ basePrice, comparePrice, onBasePriceCha
                         <input
                             value={comparePrice}
                             onChange={onComparePriceChange}
-                            className={`w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl pl-8 pr-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-orange-500/20 dark:focus:ring-orange-400/20 focus:border-orange-500 dark:focus:border-orange-400 transition-all ${errors.comparePrice ? 'ring-2 ring-red-500 dark:ring-red-400 border-red-500 dark:border-red-400' : ''
+                            className={`w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl pl-8 pr-4 py-3 md:py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/20 focus:border-primary dark:focus:border-primary transition-all ${errors.comparePrice ? 'ring-2 ring-red-500 dark:ring-red-400 border-red-500 dark:border-red-400' : ''
                                 }`}
                             placeholder="0.00"
                             type="number"

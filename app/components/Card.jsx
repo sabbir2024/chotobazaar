@@ -188,11 +188,11 @@ export default function Card({ product }) {
             {/* Product Info */}
             <div className="mt-3 space-y-2">
                 <div className="flex justify-between items-start gap-2">
-                    <h3 className="font-bold text-sm sm:text-base line-clamp-2 flex-1 text-gray-900 dark:text-white">
-                        {product.productName || product.product_name || "Unnamed Product"}
+                    <h3 className="font-bold text-sm  sm:text-base line-clamp-2 flex-1 text-gray-900 dark:text-primary">
+                        {product.productName || "Unnamed Product"}
                     </h3>
                     <div className="text-right">
-                        <p className="text-primary dark:text-orange-500 font-bold text-sm sm:text-base whitespace-nowrap">
+                        <p className="text-primary dark:text-primary font-bold text-sm sm:text-base whitespace-nowrap">
                             ৳{currentPrice}
                         </p>
                         {originalPrice && originalPrice > currentPrice && (
@@ -218,7 +218,7 @@ export default function Card({ product }) {
 
                     {/* Stock Status */}
                     {product.quantity !== undefined && (
-                        <span className={`text-xs ${product.quantity > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                        <span className={`text-xs ${product.quantity > 0 ? 'text-green-600 dark:text-primary' : 'text-red-600 dark:text-red-400'}`}>
                             {product.quantity > 0 ? `In Stock (${product.quantity})` : 'Out of Stock'}
                         </span>
                     )}
@@ -226,7 +226,7 @@ export default function Card({ product }) {
 
                 {/* Savings info for large discount */}
                 {discountPercentage >= 20 && originalPrice && (
-                    <div className="text-xs text-green-600 dark:text-green-400 font-medium">
+                    <div className="text-xs text-green-600 dark:text-primary font-medium">
                         Save ৳{originalPrice - currentPrice}
                     </div>
                 )}

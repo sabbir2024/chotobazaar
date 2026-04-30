@@ -7,7 +7,7 @@ import Logo from "../../../components/Logo";
 export default function TopBar({ showCall }) {
     return (
         <div
-            className={`bg-orange-500 w-full h-auto p-2 flex justify-between transition-transform duration-300 ${showCall ? 'translate-y-0' : '-translate-y-full'
+            className={`bg-primary w-full h-auto p-2 flex justify-between transition-transform duration-300 ${showCall ? 'translate-y-0' : '-translate-y-full'
                 }`}
         >
             <h1 className="font-bold text-white flex gap-1"> <FaPhone />

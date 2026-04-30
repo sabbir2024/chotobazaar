@@ -76,7 +76,7 @@ export default function LoginSection() {
             </div>
 
             <div className="bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-bold p-6 md:p-10 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-bold mb-6 text-primary dark:text-orange-500">Secure Login</h3>
+                <h3 className="text-xl font-bold mb-6 text-primary dark:text-primary">Secure Login</h3>
 
                 {error && (
                     <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg text-sm">
@@ -91,7 +91,7 @@ export default function LoginSection() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Email Address"
-                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                         required
                     />
                     <input
@@ -100,7 +100,7 @@ export default function LoginSection() {
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Password"
-                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                        className="w-full bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white px-4 py-3 rounded-md outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-gray-500"
                         required
                     />
                     <button
@@ -119,7 +119,7 @@ export default function LoginSection() {
                 <div className="mt-4 text-center">
                     <button
                         onClick={() => document.getElementById('signup-tab')?.click()}
-                        className="text-sm text-primary dark:text-orange-500 hover:underline"
+                        className="text-sm text-primary dark:text-primary hover:underline"
                     >
                         Don't have an account? Sign up
                     </button>

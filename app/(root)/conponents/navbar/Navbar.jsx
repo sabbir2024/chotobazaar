@@ -228,7 +228,7 @@ export default function Navbar() {
                         {isAuthenticated && (
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-orange-400 to-primary flex items-center justify-center">
+                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-primary to-primary flex items-center justify-center">
                                         <span className="text-white text-xs font-bold">{session?.user?.name?.charAt(0)?.toUpperCase()}</span>
                                     </div>
                                 </div>
@@ -251,7 +251,7 @@ export default function Navbar() {
                                                 className={`hover:text-primary ${isActive('/profile') ? 'text-primary bg-orange-50 dark:bg-orange-950/30' : ''
                                                     }`}
                                             >
-                                                Profile <span className="badge badge-sm bg-orange-500 text-white">New</span>
+                                                Profile <span className="badge badge-sm bg-primary text-white">New</span>
                                             </Link>
                                         )}
                                     </li>
