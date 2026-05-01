@@ -79,10 +79,10 @@ export default async function Page() {
                 <div className="my-8 md:my-12">
                     <div className="text-center mb-8 md:mb-12">
                         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                            Shop by Category
+                            বিভাগ অনুযায়ী কেনাকাটা করুন
                         </h2>
                         <p className="text-gray-600 text-sm md:text-base">
-                            Discover amazing products across our {categories.length} categories
+                            আমাদের {new Intl.NumberFormat('bn-BD').format(categories.length)} টি ক্যাটাগরিতে অসাধারণ সব পণ্য আবিষ্কার করুন।
                         </p>
                     </div>
                     <CategoryBento categories={featuredCategories} categoriesConfig={categoriesConfig} />

@@ -1,39 +1,51 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="max-w-screen-2xl mx-auto px-4 md:px-6 mb-16 ">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center py-2">
+            <div className="space-y-6 ">
+                <span className="text-primary text-xs font-bold uppercase tracking-wider">
+                    সিজনাল এডিট
+                </span>
 
-                <div className="lg:col-span-5 space-y-6">
-                    <span className="text-primary text-xs font-bold uppercase">
-                        The Seasonal Edit
-                    </span>
+                <h1 className="text-4xl md:text-6xl font-black leading-tight">
+                    আধুনিক <br />  জীবনের জন্য <br /> <span className="text-primary">ঐতিহ্যবাহী</span> জিনিসের গুণমান।
+                </h1>
 
-                    <h1 className="text-4xl md:text-6xl font-black leading-tight">
-                        Curated <br /> Objects for <br /> <span className="text-primary">Modern</span> Living.
-                    </h1>
+                <p className="/80 font-medium text-lg">
+                    উচ্চমানের নিত্যপ্রয়োজনীয় জিনিসের একটি কঠোরভাবে ফিল্টার করা সংগ্রহ।                </p>
 
-                    <p className="text-gray-500 font-bold">
-                        A strictly filtered selection of high-quality essentials.
-                    </p>
-
-                    <div className="flex flex-wrap gap-4">
-                        <Link href={'/shop'} className="bg-primary font-bold text-white px-6 py-3 rounded-xl">
-                            Explore
-                        </Link>
-                        <button className="bg-gray-200 font-bold text-black px-6 py-3 rounded-xl">
-                            Philosophy
-                        </button>
-                    </div>
+                <div className="flex flex-wrap gap-4 pt-4">
+                    <Link href={'/shop'} className="btn btn-primary font-bold  px-8 py-3 rounded-full shadow-lg">
+                        অনুসন্ধান করুন
+                    </Link>
+                    <button className="border-2 border-white/30 font-bold  px-8 py-3 rounded-full hover:bg-white/10 transition backdrop-blur-sm btn btn-outline">
+                        আমাদের গল্প
+                    </button>
                 </div>
-
-                <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-                    <img className="rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVhEZr7-xrw0RCbsr6sICzlp773rTWtxzwIBVSkNpr3jT2HPp3ES_7j-Wjr4Wegs7UtUoC6ApbisGInPijWvkP3BxNohjM4WYvTLlDgngVo8GTwu8KFnlfuIgfe-yBxFm5cJwrWxV5ickNEbCYLP7EMh1a9WlWzrMSII-UBR4kP0MOeK-Tf8puKHKKmDZKz4Cwuh4dTt2XD6CAXbVj-Ds02TiCdjpJPXUTALrCMNshzOeOIW342pfVgk-1MT7ZZkhmb-7nT9jFWQ" />
-                    <img className="rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeWhkdBO5UrZc2qtqY5QfvohhqqH4q3-rWC_wWi_eoJHIRgMS_7EZQTpOPhGxqAoOQjGYp-D3vaO9PRXNg_aHxK4-t4U9rc_xrwS2sDf8naqZL9rtQvo8QFL-hqtBMN9I4dK0x6x85EhfO50zZaxOKvX0DdFG1aUc0GPxxw1s3mKZP9yuuLUNF2_JQrM6_uAEOLb3YV4XN4jYhaJqNZjaCsWsjCQTUPZnCr3abPdrPqqqMSLhsokJKOf1XMKs8p8aSSSsmAKlE8A" />
-                </div>
-
             </div>
-        </section>
+
+            <div className="grid grid-cols-2 gap-4">
+                <div className="relative group cursor-pointer">
+                    <Image
+                        className="rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                        src="/images/food.png"
+                        alt="food logo"
+                        width={500}
+                        height={500}
+                    />
+                </div>
+                <div className="relative group cursor-pointer mt-8">
+                    <Image
+                        className="rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                        src="/images/clothes.png"
+                        alt="clothes logo"
+                        width={500}
+                        height={500}
+                    />
+                </div>
+            </div>
+        </div>
     );
 }
