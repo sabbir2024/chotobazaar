@@ -19,7 +19,7 @@ import {
     IoArrowForwardOutline,
     IoBusinessOutline
 } from 'react-icons/io5';
-import useFacebookPixel from '../../../../hooks/useFacebookPixel';
+import useFacebookPixel from '../../../../../hooks/useFacebookPixel';
 
 export default function Checkout({ product }) {
 

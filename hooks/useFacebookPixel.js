@@ -1,7 +1,7 @@
 // hooks/useFacebookPixel.js
 'use client';
 
-import { event } from "../lip/fbpixel";
+import { event } from "../lib/fbpixel";
 
 
 const useFacebookPixel = () => {

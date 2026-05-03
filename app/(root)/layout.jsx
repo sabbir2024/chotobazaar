@@ -4,7 +4,7 @@ import Footer from "./conponents/footer/Footer";
 
 import "../globals.css";
 import NextAuthProvider from "../provider/NextAuthProvider";
-import FacebookPixel from "../components/FacebookPixel";
+import FacebookPixel from "../../components/FacebookPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
