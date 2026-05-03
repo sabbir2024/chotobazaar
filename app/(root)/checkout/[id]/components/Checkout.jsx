@@ -17,11 +17,12 @@ import {
     IoCashOutline,
     IoCheckmarkCircleOutline,
     IoArrowForwardOutline,
-    IoHomeOutline,
     IoBusinessOutline
 } from 'react-icons/io5';
+import useFacebookPixel from '../../../../hooks/useFacebookPixel';
 
 export default function Checkout({ product }) {
+
     const router = useRouter();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
@@ -37,6 +38,8 @@ export default function Checkout({ product }) {
         productName: product?.productName || product?.product_name || 'Product Name',
         productPrice: product?.basePrice || product?.price?.current_price || 0
     });
+
+    const { trackButtonClick, trackAddToCart, trackPurchase } = useFacebookPixel();
 
     const handleQuantityChange = (e) => {
         const newQuantity = parseInt(e.target.value) || 1;
@@ -107,6 +110,26 @@ export default function Checkout({ product }) {
         }
 
         try {
+            // Track InitiateCheckout event
+            if (typeof window !== 'undefined' && window.fbq) {
+                window.fbq('track', 'InitiateCheckout', {
+                    content_name: formData.productName,
+                    content_ids: [product?._id],
+                    content_type: 'product',
+                    value: totalPrice,
+                    currency: 'BDT',
+                    num_items: formData.quantity
+                });
+            }
+
+            // Track button click
+            trackButtonClick('checkout_submit', {
+                product_id: product?._id,
+                product_name: formData.productName,
+                product_price: totalPrice,
+                quantity: formData.quantity
+            });
+
             const orderData = {
                 customer_name: formData.name,
                 customer_email: formData.email || '',
@@ -137,6 +160,26 @@ export default function Checkout({ product }) {
             const result = await response.json();
 
             if (response.ok) {
+                // Track Purchase event on successful order
+                if (typeof window !== 'undefined' && window.fbq) {
+                    window.fbq('track', 'Purchase', {
+                        value: totalPrice,
+                        currency: 'BDT',
+                        content_ids: [product?._id],
+                        content_type: 'product',
+                        num_items: formData.quantity,
+                        order_id: result?.order_id
+                    });
+                }
+
+                // Track purchase using hook
+                trackPurchase({
+                    total: totalPrice,
+                    productIds: [product?._id],
+                    itemCount: formData.quantity,
+                    orderId: result?.order_id
+                });
+
                 Cookies.set("product_id", result.order_id, {
                     expires: 30,
                     path: '/',

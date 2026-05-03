@@ -7,8 +7,7 @@ export default async function CarouselServer({ category, title, icon, badge, sub
 
     try {
         const results = await fetch(`${apiUrl}/products?category=${category}&limit=6`, {
-            cache: 'no-store',
-            next: { revalidate: 3600 }
+            cache: 'no-store'
         });
 
         const data = await results.json();
