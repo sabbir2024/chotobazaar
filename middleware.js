@@ -6,18 +6,12 @@ export default withAuth(
         const { pathname } = request.nextUrl;
         const token = request.nextauth.token;
 
-        // Admin routes only accessible by admin
+        // Only admin can access admin routes
         if (pathname.startsWith('/dashboard/admin')) {
             if (token?.role !== 'admin') {
-                // Redirect non-admin users to user dashboard
-                return NextResponse.redirect(new URL('/dashboard', request.url));
-            }
-        }
-
-        // User dashboard - if admin tries to access, redirect to admin dashboard
-        if (pathname === '/dashboard') {
-            if (token?.role === 'admin') {
-                return NextResponse.redirect(new URL('/dashboard/admin', request.url));
+                return NextResponse.redirect(
+                    new URL('/dashboard', request.url)
+                );
             }
         }
 
@@ -25,12 +19,11 @@ export default withAuth(
     },
     {
         callbacks: {
-            authorized: ({ token }) => !!token // User must be logged in
+            authorized: ({ token }) => !!token,
         },
     }
 );
 
-// Specify which routes this middleware should run on
 export const config = {
     matcher: [
         '/dashboard/:path*',
