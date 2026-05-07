@@ -1,4 +1,3 @@
-// components/carousel/CarouselServer.jsx (Server Component - No 'use client')
 import { apiUrl } from "../../../components/url";
 import CarouselClient from "./Carousel";
 

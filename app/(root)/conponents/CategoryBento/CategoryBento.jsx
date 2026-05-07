@@ -5,6 +5,7 @@ export default function CategoryBento({ categories, categoriesConfig }) {
         id: catName,
         ...categoriesConfig[catName]
     }));
+    console.log('process.env.NEXT_PUBLIC_MONGODB_URI', process.env.NEXT_PUBLIC_MONGODB_URI);
 
 
     return (

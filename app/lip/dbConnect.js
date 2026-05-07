@@ -20,5 +20,5 @@ const client = new MongoClient(uri, {
     }
 });
 export default function dbConnect(collectionName) {
-    return client.db("floraDB").collection(collectionName)
+    return client.db("chotobazaarDB").collection(collectionName)
 }
