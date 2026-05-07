@@ -17,7 +17,7 @@ export default withAuth(
         // User dashboard - if admin tries to access, redirect to admin dashboard
         if (pathname === '/dashboard') {
             if (token?.role === 'admin') {
-                return NextResponse.redirect(new URL('/dashboard', request.url));
+                return NextResponse.redirect(new URL('/dashboard/admin', request.url));
             }
         }
 
