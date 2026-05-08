@@ -54,19 +54,19 @@ export const metadata = {
     siteName: "Choto Bazaar",
     images: [
       {
-        url: "https://i.ibb.co.com/LhhrGsbV/logo.png",
+        url: "https://ibb.co.com/LhhrGsbV",
         width: 1200,
         height: 630,
         alt: "Choto Bazaar Logo",
       },
       {
-        url: "https://i.ibb.co.com/FLtJKYsk/home-page.png",
+        url: "https://ibb.co.com/FLtJKYsk",
         width: 1200,
         height: 630,
         alt: "Choto Bazaar Home Page",
       },
       {
-        url: "https://i.ibb.co.com/99cMNX1j/all-product.png",
+        url: "https://ibb.co.com/99cMNX1j",
         width: 1200,
         height: 630,
         alt: "Choto Bazaar Products",
@@ -81,7 +81,7 @@ export const metadata = {
     title: "Choto Bazaar",
     description:
       "Shop daily essentials, fashion, electronics, and more from Choto Bazaar.",
-    images: ["https://i.ibb.co.com/FLtJKYsk/home-page.png"],
+    images: ["https://ibb.co.com/FLtJKYsk"],
   },
 
   icons: {
