@@ -44,7 +44,6 @@ export const metadata = {
     "best online marketplace",
   ],
 
-  metadataBase: new URL("https://chotobazaar.vercel.app"),
 
   openGraph: {
     title: "Choto Bazaar",
