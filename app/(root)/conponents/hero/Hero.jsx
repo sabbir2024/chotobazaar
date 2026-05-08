@@ -1,19 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+import { fontBangla } from "../../layout";
 
 export default function Hero() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center py-2">
-            <div className="space-y-6 ">
+            <div className={`space-y-6 `}>
                 <span className="text-primary text-xs font-bold uppercase tracking-wider">
                     সিজনাল এডিট
                 </span>
 
-                <h1 className="text-4xl md:text-6xl font-black leading-tight">
+                <h1 className={`text-4xl md:text-6xl font-black leading-tight  ${fontBangla.className}`}>
                     আধুনিক <br />  জীবনের জন্য <br /> <span className="text-primary">ঐতিহ্যবাহী</span> জিনিসের গুণমান।
                 </h1>
 
-                <p className="/80 font-medium text-lg">
+                <p className={` font-medium text-lg  ${fontBangla.className}`}>
                     উচ্চমানের নিত্যপ্রয়োজনীয় জিনিসের একটি কঠোরভাবে ফিল্টার করা সংগ্রহ।                </p>
 
                 <div className="flex flex-wrap gap-4 pt-4">

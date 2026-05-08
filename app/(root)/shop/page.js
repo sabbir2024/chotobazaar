@@ -2,6 +2,13 @@ import Filters from "../../components/Filters/Filters";
 import ProductGrid from "../../components/ProductGrid/ProductGrid";
 
 
+
+export const metadata = {
+  title:"All Product",
+  description: "Happy cool shoping",
+};
+
+
 export default async function page({ searchParams }) {
     const resolvedSearchParams = await searchParams;
 

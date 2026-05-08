@@ -4,6 +4,11 @@ import BrandStory from "./components/BrandStory/BrandStory";
 import LoginSection from "./components/LoginSection/LoginSection";
 import Registard from "./components/registard/Registard";
 
+export const metadata = {
+  title:"About",
+  description: "Happy cool shoping",
+};
+
 export default function page() {
     return (
         <Container>
