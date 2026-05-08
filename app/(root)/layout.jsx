@@ -25,67 +25,78 @@ const geistMono = Geist_Mono({
 
 
 export const metadata = {
-  title:{
-    default:"Choto Bazaar",
-    template:'%s | Choto Bazaar'
+  metadataBase: new URL("https://chotobazaar.vercel.app"),
+
+  title: {
+    default: "Choto Bazaar",
+    template: "%s | Choto Bazaar",
   },
+
   description:
-    "Choto Bazaar is a modern online marketplace where you can explore and buy daily essentials, fashion, electronics, groceries, and more at affordable prices.",
+    "Choto Bazaar is a modern online marketplace for discovering quality products with a smooth and fast shopping experience.",
+
+  applicationName: "Choto Bazaar",
 
   keywords: [
     "Choto Bazaar",
-    "online shopping",
     "ecommerce",
-    "Bangladesh online shop",
-    "daily essentials",
-    "fashion",
-    "electronics",
-    "groceries",
-    "best online marketplace",
+    "online shopping",
+    "marketplace",
+    "Bangladesh shopping",
+    "buy products online",
   ],
 
+  authors: [{ name: "Choto Bazaar Team" }],
+  creator: "Choto Bazaar",
+  publisher: "Choto Bazaar",
+
+  alternates: {
+    canonical: "https://chotobazaar.vercel.app",
+  },
+
+  icons: {
+    icon: "https://i.ibb.co.com/S77cLZWF/chotologo.png",
+    shortcut: "https://i.ibb.co.com/S77cLZWF/chotologo.png",
+    apple: "https://i.ibb.co.com/S77cLZWF/chotologo.png",
+  },
 
   openGraph: {
+    type: "website",
+    url: "https://chotobazaar.vercel.app",
     title: "Choto Bazaar",
     description:
-      "Explore products, daily essentials, fashion, electronics, and more at Choto Bazaar.",
-    url: "https://chotobazaar.vercel.app",
+      "Discover quality products easily on Choto Bazaar marketplace.",
     siteName: "Choto Bazaar",
     images: [
-      {
-        url: "https://i.ibb.co.com/S77cLZWF/chotologo.png",
-        width: 1200,
-        height: 630,
-        alt: "Choto Bazaar Logo",
-      },
       {
         url: "https://i.ibb.co.com/1txKLXsY/image.png",
         width: 1200,
         height: 630,
-        alt: "Choto Bazaar Home Page",
+        alt: "Choto Bazaar Home Preview",
       },
       {
         url: "https://i.ibb.co.com/C5mrzdYF/image.png",
         width: 1200,
         height: 630,
-        alt: "Choto Bazaar Products",
+        alt: "Choto Bazaar Products Preview",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Choto Bazaar",
     description:
-      "Shop daily essentials, fashion, electronics, and more from Choto Bazaar.",
+      "Modern marketplace for fast and easy online shopping experience.",
     images: ["https://i.ibb.co.com/1txKLXsY/image.png"],
   },
 
-  icons: {
-    icon: "/favicon.ico",
+  robots: {
+    index: true,
+    follow: true,
   },
+
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
